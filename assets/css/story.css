@@ -38,7 +38,7 @@ a { color: inherit; text-decoration: none; }
 .topbar a { font-size: 13px; font-weight: 600; letter-spacing: .02em; color: #fff; display: inline-flex; gap: 7px; align-items: center; }
 .topbar.solid a { color: var(--ink); }
 .topbar .home { text-transform: uppercase; letter-spacing: .14em; font-size: 12px; gap: 9px; }
-.topbar .home .back-arrow { font-size: 22px; line-height: 1; font-weight: 400; display: inline-flex; align-items: center; }
+.topbar .home .back-arrow { display: block; }
 
 /* dropdown menu */
 .menu { position: relative; }
