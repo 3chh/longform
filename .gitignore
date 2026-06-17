@@ -3,3 +3,7 @@
 Thumbs.db
 desktop.ini
 *.tmp
+
+# Tài nguyên gốc (ảnh chưa nén, docx, zip) — không deploy
+_source/
+*.zip
