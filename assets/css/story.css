@@ -167,18 +167,19 @@ a { color: inherit; text-decoration: none; }
 }
 .section .rule { width: 56px; height: 3px; background: var(--accent); margin: 22px auto 0; border-radius: 2px; }
 
-/* Q&A */
+/* Q&A — định dạng phỏng vấn (PV / TÊN NHÂN VẬT in hoa) */
 .qa { margin: 34px 0; }
 .qa .q {
-  font-family: var(--sans); font-weight: 600; font-style: italic; color: var(--ink); font-size: 19px;
-  line-height: 1.55; margin: 0 0 14px; padding-left: 30px; position: relative;
-}
-.qa .q::before {
-  content: "Q"; position: absolute; left: 0; top: -2px;
-  font-family: var(--serif); font-style: normal; font-weight: 800; color: var(--accent); font-size: 26px;
+  font-family: var(--sans); font-weight: 500; font-style: italic; color: var(--ink);
+  font-size: 18.5px; line-height: 1.6; margin: 26px 0 14px;
 }
 .qa .a { font-size: 18px; margin: 0 0 18px; }
-.qa .a:first-of-type { position: relative; }
+.who {
+  font-family: var(--sans); font-weight: 800; font-style: normal;
+  text-transform: uppercase; letter-spacing: .03em; margin-right: 7px;
+}
+.qa .q .who { color: var(--accent); }
+.qa .a .who { color: var(--ink); }
 
 /* pull quote */
 .pullquote {
@@ -202,6 +203,20 @@ a { color: inherit; text-decoration: none; }
 .media-3 img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
 .media-3 .span img { aspect-ratio: 16/9; }
 .media-3 .half img { aspect-ratio: 4/3; }
+
+/* media-split: 1 ảnh dọc bên trái + 2 ảnh ngang xếp chồng bên phải */
+.media-split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 48px 0; }
+.media-split .tall { aspect-ratio: 3/4; }
+.media-split .tall img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+.media-split .col-right { display: grid; grid-template-rows: 1fr 1fr; gap: 14px; }
+.media-split .col-right img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+.media-split figcaption { grid-column: 1 / -1; }
+@media (max-width: 600px) {
+  .media-split { grid-template-columns: 1fr; }
+  .media-split .tall { aspect-ratio: 4/3; }
+  .media-split .col-right { grid-template-rows: auto auto; }
+  .media-split .col-right img { aspect-ratio: 16/10; }
+}
 figcaption {
   margin-top: 12px; max-width: var(--read); margin-left: auto; margin-right: auto;
   font-size: 13.5px; line-height: 1.6; color: var(--muted); font-style: italic; text-align: center;
