@@ -11,11 +11,23 @@
   --paper:   #ffffff;
   --accent:  #3f6b3a;           /* xanh rừng — gợi thiên nhiên */
   --accent-dk:#2f5a2c;
+  --bg-tint: #eef3ea;           /* nền nhạt theo tông (đổi theo theme) */
   --serif:   "Playfair Display", "Times New Roman", Georgia, serif;
   --sans:    "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
   --read:    720px;
   --wide:    1080px;
 }
+
+/* ── THEME MÀU THEO TỪNG BÀI ──
+   Mỗi bài gắn 1 class trên <body> để đổi tông màu chủ đạo (giống tienphong).
+   --bg-tint dùng cho nền sapo/section nhẹ; --hero-grad pha vào lớp phủ hero. */
+body.theme-green { --accent:#3f6b3a; --accent-dk:#2f5a2c; --bg-tint:#eef3ea; }
+body.theme-red   { --accent:#bb2f2a; --accent-dk:#8f231f; --bg-tint:#f7ece9; }
+body.theme-amber { --accent:#c9761b; --accent-dk:#a25c10; --bg-tint:#f8efe2; }
+body.theme-navy  { --accent:#2f5597; --accent-dk:#22406f; --bg-tint:#e9eef6; }
+body.theme-plum  { --accent:#8a3573; --accent-dk:#6a285a; --bg-tint:#f4eaf1; }
+body.theme-teal  { --accent:#1f7a72; --accent-dk:#155a54; --bg-tint:#e6f2f0; }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
@@ -88,9 +100,9 @@ a { color: inherit; text-decoration: none; }
 .hero-inner { position: relative; z-index: 2; max-width: var(--wide); width: 100%; margin: 0 auto; padding: 0 24px 64px; }
 .hero .kicker {
   display: inline-block; font-family: var(--sans); font-size: 12px; font-weight: 700;
-  letter-spacing: .22em; text-transform: uppercase; margin-bottom: 22px;
-  padding-bottom: 8px; border-bottom: 2px solid var(--accent);
-  text-shadow: 0 1px 16px rgba(0,0,0,.6);
+  letter-spacing: .18em; text-transform: uppercase; margin-bottom: 20px;
+  background: var(--accent); color: #fff; padding: 6px 13px; border-radius: 4px;
+  box-shadow: 0 6px 22px rgba(0,0,0,.25);
 }
 .hero h1 {
   font-family: var(--serif); font-weight: 800; letter-spacing: -.01em;
@@ -113,7 +125,7 @@ a { color: inherit; text-decoration: none; }
 .hero.hero--text { min-height: auto; color: var(--ink); align-items: stretch; padding: 116px 0 8px; }
 .hero.hero--text::after { display: none; }
 .hero.hero--text .hero-inner { max-width: var(--read); padding-bottom: 0; }
-.hero.hero--text .kicker { color: var(--accent); text-shadow: none; }
+.hero.hero--text .kicker { color: #fff; box-shadow: none; }
 .hero.hero--text h1 { color: var(--ink); text-shadow: none; font-size: clamp(30px, 5vw, 52px); }
 .hero.hero--text .dek { color: var(--muted); text-shadow: none; }
 .hero.hero--text .meta { color: var(--muted); text-shadow: none; }
@@ -132,8 +144,9 @@ a { color: inherit; text-decoration: none; }
   font-weight: 800; margin: 0.02em 0.14em 0 0; color: var(--accent);
 }
 .intro-note {
-  font-size: 16px; color: var(--muted); font-style: italic;
-  border-left: 3px solid var(--accent); padding-left: 18px; margin: 28px 0 8px;
+  font-size: 16px; color: var(--text); font-style: italic;
+  border-left: 3px solid var(--accent); background: var(--bg-tint);
+  padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 28px 0 8px;
 }
 
 /* body text */
@@ -169,7 +182,8 @@ a { color: inherit; text-decoration: none; }
 
 /* pull quote */
 .pullquote {
-  max-width: 880px; margin: 56px auto; text-align: center; padding: 0 8px;
+  max-width: 860px; margin: 60px auto; text-align: center;
+  background: var(--bg-tint); border-radius: 18px; padding: 44px 36px;
 }
 .pullquote p {
   font-family: var(--serif); font-style: italic; font-weight: 600; color: var(--ink);
