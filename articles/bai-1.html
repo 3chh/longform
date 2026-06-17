@@ -25,8 +25,21 @@
   <!-- TOP BAR -->
   <div class="topbar" id="topbar">
     <div class="inner">
-      <a class="home" href="../index.html">← Vũ điệu số</a>
-      <a href="../index.html">Mục lục</a>
+      <a class="home" href="../index.html">← Long Form</a>
+      <div class="menu" id="menu">
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-haspopup="true">
+          Mục lục
+          <svg class="caret" width="11" height="7" viewBox="0 0 11 7" aria-hidden="true"><path d="M1 1l4.5 4.5L10 1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="menu-list" id="menuList" role="menu">
+          <span class="menu-head">Các bài viết</span>
+          <a href="bai-1.html" role="menuitem">Học cùng AI, lớn lên từ trải nghiệm</a>
+          <a href="bai-2.html" role="menuitem">Tiêu đề bài longform số 2</a>
+          <a href="bai-3.html" role="menuitem">Tiêu đề bài longform số 3</a>
+          <a href="bai-4.html" role="menuitem">Tiêu đề bài longform số 4</a>
+          <a href="../index.html" role="menuitem" class="menu-home">Về trang chủ</a>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -201,6 +214,20 @@
       bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
       topbar.classList.toggle('solid', h.scrollTop > window.innerHeight * 0.6);
     }, { passive: true });
+
+    // dropdown "Mục lục"
+    var menuBtn = document.getElementById('menuBtn');
+    var menuList = document.getElementById('menuList');
+    function closeMenu() { menuList.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+    menuBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menuList.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!document.getElementById('menu').contains(e.target)) closeMenu();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
   </script>
 </body>
 </html>
