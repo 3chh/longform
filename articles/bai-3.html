@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài longform số 3 — Longform</title>
+  <meta name="description" content="Bài longform số 3. Nội dung sẽ được cập nhật theo bản chính thức.">
+  <meta name="theme-color" content="#d61f26">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/article.css">
+</head>
+<body>
+  <div id="progress"></div>
+
+  <div class="topbar">
+    <div class="col"><a href="../index.html">← Về trang chủ</a></div>
+  </div>
+
+  <header class="art-hero">
+    <div class="col">
+      <span class="kicker">Tuyến bài longform</span>
+      <h1>Tiêu đề bài longform số 3</h1>
+      <p class="sapo">Đoạn sapo của bài số 3 — phần tóm tắt dẫn dắt người đọc. Sẽ được thay bằng nội dung chính thức khi bạn cung cấp.</p>
+      <div class="byline">Tác giả · 17/06/2026 · 10 phút đọc</div>
+    </div>
+  </header>
+
+  <figure class="art-cover">
+    <img src="../assets/img/cover-3.jpg" alt="">
+    <figcaption>Ảnh bìa minh hoạ (placeholder)</figcaption>
+  </figure>
+
+  <article class="art-body">
+    <div class="col">
+      <div class="placeholder">
+        Đây là trang bài số 3. Bố cục đang ở dạng template —
+        khi bạn gửi <b>nội dung</b> và <b>design mẫu</b>, mình sẽ dựng lại bài này theo đúng thiết kế.
+      </div>
+
+      <p>Đoạn mở đầu mẫu để minh hoạ khoảng cách dòng, cỡ chữ và bề rộng cột đọc của bài longform. Văn bản này chỉ là placeholder.</p>
+      <h2>Một tiêu đề mục</h2>
+      <p>Nội dung đoạn văn mẫu. Khi có bản chính thức, phần này sẽ được thay thế hoàn toàn bằng nội dung và hình ảnh thật của bài viết.</p>
+      <blockquote>Một câu trích dẫn nổi bật sẽ trông như thế này trong bài.</blockquote>
+      <p>Đoạn kết mẫu của phần thân bài.</p>
+    </div>
+  </article>
+
+  <footer class="art-footer">
+    <div class="col">
+      <a href="bai-2.html">← Bài 2</a>
+      <a href="../index.html">Trang chủ</a>
+      <a href="bai-4.html">Bài 4 →</a>
+    </div>
+  </footer>
+
+  <script>
+    var bar = document.getElementById('progress');
+    addEventListener('scroll', function () {
+      var h = document.documentElement;
+      var p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+      bar.style.width = (p * 100) + '%';
+    }, { passive: true });
+  </script>
+</body>
+</html>
