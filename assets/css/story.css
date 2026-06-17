@@ -158,8 +158,8 @@ a { color: inherit; text-decoration: none; }
   text-align: center; margin: 72px auto 36px; max-width: var(--read);
 }
 .section .eyebrow {
-  font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent);
-  font-weight: 700; display: block; margin-bottom: 14px;
+  font-size: 15px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent);
+  font-weight: 800; display: block; margin-bottom: 14px;
 }
 .section h2 {
   font-family: var(--serif); font-weight: 800; color: var(--ink);
@@ -211,12 +211,6 @@ a { color: inherit; text-decoration: none; }
 .media-split .col-right { display: grid; grid-template-rows: 1fr 1fr; gap: 14px; }
 .media-split .col-right img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
 .media-split figcaption { grid-column: 1 / -1; }
-@media (max-width: 600px) {
-  .media-split { grid-template-columns: 1fr; }
-  .media-split .tall { aspect-ratio: 4/3; }
-  .media-split .col-right { grid-template-rows: auto auto; }
-  .media-split .col-right img { aspect-ratio: 16/10; }
-}
 figcaption {
   margin-top: 12px; max-width: var(--read); margin-left: auto; margin-right: auto;
   font-size: 13.5px; line-height: 1.6; color: var(--muted); font-style: italic; text-align: center;
@@ -244,8 +238,6 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
 @media (max-width: 720px) {
   .story { padding-top: 52px; }
   .lead::first-letter { font-size: 3.2em; }
-  .media-2, .media-3 { grid-template-columns: 1fr; }
-  .media-3 .span { grid-column: auto; }
   .hero { min-height: 92svh; }
 }
 @media (max-width: 560px) {
