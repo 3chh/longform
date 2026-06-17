@@ -73,13 +73,13 @@ a { color: inherit; text-decoration: none; }
 .hero .scrollcue::before { content: ""; width: 38px; height: 1px; background: rgba(255,255,255,.6); }
 
 /* ── ARTICLE WRAPPER ── */
-.story { max-width: var(--wide); margin: 0 auto; padding: 0 24px; }
+.story { max-width: var(--wide); margin: 0 auto; padding: 80px 24px 0; }
 .prose { max-width: var(--read); margin: 0 auto; }
 
 /* lead / intro */
 .lead {
   font-family: var(--sans); font-size: clamp(19px, 2.4vw, 23px); line-height: 1.7;
-  color: var(--ink); font-weight: 500; margin: 88px 0 8px;
+  color: var(--ink); font-weight: 500; margin: 0 0 8px;
 }
 .lead::first-letter {
   font-family: var(--serif); float: left; font-size: 3.5em; line-height: .9;
@@ -167,7 +167,7 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 720px) {
-  .lead { margin-top: 64px; }
+  .story { padding-top: 52px; }
   .lead::first-letter { font-size: 3.2em; }
   .media-2, .media-3 { grid-template-columns: 1fr; }
   .media-3 .span { grid-column: auto; }
