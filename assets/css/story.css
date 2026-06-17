@@ -47,22 +47,24 @@ a { color: inherit; text-decoration: none; }
 .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .hero::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.05) 32%, rgba(0,0,0,.2) 60%, rgba(0,0,0,.82) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.05) 26%, rgba(0,0,0,.22) 52%, rgba(0,0,0,.9) 100%);
 }
 .hero-inner { position: relative; z-index: 2; max-width: var(--wide); width: 100%; margin: 0 auto; padding: 0 24px 64px; }
 .hero .kicker {
   display: inline-block; font-family: var(--sans); font-size: 12px; font-weight: 700;
   letter-spacing: .22em; text-transform: uppercase; margin-bottom: 22px;
   padding-bottom: 8px; border-bottom: 2px solid var(--accent);
+  text-shadow: 0 1px 16px rgba(0,0,0,.6);
 }
 .hero h1 {
   font-family: var(--serif); font-weight: 800; letter-spacing: -.01em;
   font-size: clamp(38px, 7vw, 86px); line-height: 1.04; max-width: 16ch;
-  text-shadow: 0 4px 40px rgba(0,0,0,.35);
+  text-shadow: 0 3px 28px rgba(0,0,0,.55), 0 1px 4px rgba(0,0,0,.4);
 }
 .hero .dek {
   margin-top: 24px; max-width: 60ch; font-size: clamp(16px, 1.9vw, 20px);
-  line-height: 1.6; color: rgba(255,255,255,.9); font-weight: 400;
+  line-height: 1.6; color: rgba(255,255,255,.92); font-weight: 400;
+  text-shadow: 0 1px 18px rgba(0,0,0,.55);
 }
 .hero .scrollcue {
   margin-top: 30px; font-size: 12px; letter-spacing: .18em; text-transform: uppercase;
@@ -77,11 +79,11 @@ a { color: inherit; text-decoration: none; }
 /* lead / intro */
 .lead {
   font-family: var(--sans); font-size: clamp(19px, 2.4vw, 23px); line-height: 1.7;
-  color: var(--ink); font-weight: 500; margin: 64px 0 8px;
+  color: var(--ink); font-weight: 500; margin: 88px 0 8px;
 }
 .lead::first-letter {
-  font-family: var(--serif); float: left; font-size: 4.4em; line-height: .82;
-  font-weight: 800; padding: 6px 14px 0 0; color: var(--accent);
+  font-family: var(--serif); float: left; font-size: 3.5em; line-height: .9;
+  font-weight: 800; margin: 0.02em 0.14em 0 0; color: var(--accent);
 }
 .intro-note {
   font-size: 16px; color: var(--muted); font-style: italic;
@@ -153,6 +155,7 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
   border-top: 1px solid var(--line); text-align: center;
 }
 .byline .credit { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.byline .credit + .credit { margin-top: 8px; }
 .byline .credit b { color: var(--ink); font-weight: 700; }
 .endmark { width: 10px; height: 10px; background: var(--accent); margin: 0 auto 26px; transform: rotate(45deg); }
 
@@ -164,8 +167,16 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 720px) {
-  .lead::first-letter { font-size: 3.6em; }
+  .lead { margin-top: 64px; }
+  .lead::first-letter { font-size: 3.2em; }
   .media-2, .media-3 { grid-template-columns: 1fr; }
   .media-3 .span { grid-column: auto; }
   .hero { min-height: 92svh; }
+}
+@media (max-width: 560px) {
+  .hero-inner { padding-bottom: 40px; }
+  .hero h1 { font-size: clamp(28px, 8.4vw, 38px); max-width: 20ch; }
+  .hero .kicker { margin-bottom: 14px; }
+  .hero .dek { margin-top: 16px; font-size: 15px; }
+  .hero .scrollcue { margin-top: 20px; }
 }

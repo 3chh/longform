@@ -41,10 +41,18 @@ a { color: inherit; text-decoration: none; }
   height: 64px;
 }
 .brand {
-  display: flex; align-items: center; gap: 10px;
-  font-weight: 800; font-size: 22px; letter-spacing: -.01em; color: var(--ink);
+  display: flex; flex-direction: column; gap: 3px; line-height: 1;
 }
-.brand .dot { color: var(--accent); }
+.brand-name {
+  font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 700;
+  font-size: 27px; letter-spacing: .005em;
+  background: linear-gradient(100deg, #6fa45f 0%, #9ccb8c 55%, #b9dcab 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.brand-sub {
+  font-family: var(--font); font-size: 10px; font-weight: 700;
+  letter-spacing: .46em; text-transform: uppercase; color: #9aa39b; padding-left: 3px;
+}
 .site-nav { display: flex; gap: 28px; }
 .site-nav a {
   font-size: 14px; font-weight: 600; color: var(--muted);
