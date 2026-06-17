@@ -47,7 +47,7 @@ a { color: inherit; text-decoration: none; }
   font-family: "Playfair Display", Georgia, serif; font-style: italic; font-weight: 700;
   font-size: 25px; line-height: 1.6; letter-spacing: .005em;
   padding: 8px 2px 0 0;
-  background: linear-gradient(100deg, #6fa45f 0%, #9ccb8c 55%, #b9dcab 100%);
+  background: linear-gradient(100deg, #4a8438 0%, #6ba759 55%, #8cc479 100%);
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .brand-sub {
