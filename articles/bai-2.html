@@ -3,65 +3,193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bài longform số 2 — Longform</title>
-  <meta name="description" content="Bài longform số 2. Nội dung sẽ được cập nhật theo bản chính thức.">
-  <meta name="theme-color" content="#d61f26">
+  <title>Bí thư xứ Mường và hành trình phát triển quê hương qua công nghệ số — Vũ điệu số</title>
+  <meta name="description" content="Trò chuyện với đồng chí Nguyễn Duy Tư — Bí thư Đảng uỷ xã Vân Sơn — về hành trình trở thành nhà sáng tạo nội dung, đưa bản làng xứ Mường lên không gian số.">
+  <meta name="theme-color" content="#16140f">
+
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Vũ điệu số">
+  <meta property="og:title" content="Bí thư xứ Mường và hành trình phát triển quê hương qua công nghệ số">
+  <meta property="og:description" content="Một Bí thư Đảng ủy xã trở thành nhà sáng tạo nội dung — hành trình đưa bản làng xứ Mường lên không gian số.">
+  <meta property="og:image" content="../assets/img/bai-2/hero.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/article.css">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/story.css">
 </head>
 <body>
   <div id="progress"></div>
 
-  <div class="topbar">
-    <div class="col"><a href="../index.html">← Về trang chủ</a></div>
+  <!-- TOP BAR -->
+  <div class="topbar" id="topbar">
+    <div class="inner">
+      <a class="home" href="../index.html"><svg class="back-arrow" width="24" height="14" viewBox="0 0 24 14" aria-hidden="true"><path d="M23 7H1m0 0l6.5-6M1 7l6.5 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Long Form</a>
+      <div class="menu" id="menu">
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-haspopup="true">
+          Mục lục
+          <svg class="caret" width="11" height="7" viewBox="0 0 11 7" aria-hidden="true"><path d="M1 1l4.5 4.5L10 1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="menu-list" id="menuList" role="menu">
+          <span class="menu-head">Longform</span>
+          <a href="bai-1.html" role="menuitem">Học cùng AI, lớn lên từ trải nghiệm</a>
+          <a href="bai-2.html" role="menuitem">Bí thư xứ Mường và hành trình phát triển quê hương qua công nghệ số</a>
+          <span class="menu-head mt">Tin tức</span>
+          <a href="../tin/tin-1.html" role="menuitem">Gần 6,2 tỷ đồng sau 3 ngày ghi hình “Mái ấm gia đình Việt”</a>
+          <a href="../tin/tin-2.html" role="menuitem">Khai mạc trưng bày “Bút thép, lòng son”</a>
+          <a href="../index.html" role="menuitem" class="menu-home">Về trang chủ</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <header class="art-hero">
-    <div class="col">
-      <span class="kicker">Tuyến bài longform</span>
-      <h1>Tiêu đề bài longform số 2</h1>
-      <p class="sapo">Đoạn sapo của bài số 2 — phần tóm tắt dẫn dắt người đọc. Sẽ được thay bằng nội dung chính thức khi bạn cung cấp.</p>
-      <div class="byline">Tác giả · 17/06/2026 · 10 phút đọc</div>
+  <!-- HERO -->
+  <header class="hero">
+    <img class="hero-img" src="../assets/img/bai-2/hero.jpg" alt="Chân dung đồng chí Nguyễn Duy Tư — Bí thư Đảng uỷ xã Vân Sơn">
+    <div class="hero-inner">
+      <span class="kicker">Phỏng vấn · Chuyển đổi số</span>
+      <h1>Bí thư xứ Mường và hành trình phát triển quê hương qua công nghệ số</h1>
+      <p class="dek">Một Bí thư Đảng ủy xã trở thành nhà sáng tạo nội dung — và hành trình đưa bản làng xứ Mường lên không gian số.</p>
+      <div class="meta">Thu Ngân — Châu Sa · 17/06/2026 · 9 phút đọc</div>
+      <span class="scrollcue">Cuộn để đọc</span>
     </div>
   </header>
 
-  <figure class="art-cover">
-    <img src="../assets/img/cover-2.jpg" alt="">
-    <figcaption>Ảnh bìa minh hoạ (placeholder)</figcaption>
-  </figure>
+  <!-- ARTICLE -->
+  <main class="story">
 
-  <article class="art-body">
-    <div class="col">
-      <div class="placeholder">
-        Đây là trang bài số 2. Bố cục đang ở dạng template —
-        khi bạn gửi <b>nội dung</b> và <b>design mẫu</b>, mình sẽ dựng lại bài này theo đúng thiết kế.
+    <!-- INTRO -->
+    <div class="prose">
+      <p class="lead">Không nhiều người hình dung một Bí thư Đảng ủy xã lại xuất hiện trên không gian mạng với vai trò nhà sáng tạo nội dung. Nhưng với ông Nguyễn Duy Tư, đó không chỉ là cách quảng bá du lịch Vân Sơn mà còn là hành trình thay đổi tư duy phát triển nơi “nóc nhà” xứ Mường.</p>
+      <p class="intro-note">Phóng viên đã có cuộc trao đổi với đồng chí Nguyễn Duy Tư — Bí thư Đảng uỷ xã Vân Sơn, tỉnh Phú Thọ; Chủ tịch HĐND xã Vân Sơn — để tìm hiểu động lực, kỳ vọng và hành trình đưa bản làng lên không gian số.</p>
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section">
+      <span class="eyebrow">Phần 01</span>
+      <h2>Làm mới hình ảnh người cán bộ cơ sở trong kỷ nguyên số</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="prose">
+      <div class="qa">
+        <p class="q">Trong suy nghĩ của nhiều người, hình ảnh một Bí thư Đảng ủy xã thường gắn với công việc quản lý, điều hành nhiều hơn. Điều gì khiến ông quyết định xuất hiện trên mạng xã hội với vai trò một nhà sáng tạo nội dung?</p>
+        <p class="a">Tôi nghĩ đây là một việc làm hết sức sáng tạo. Ngoài công việc chuyên môn là điều hành cả hệ thống chính trị cấp xã, khi trực tiếp về làm việc tại địa phương, đặc biệt gắn bó với đời sống của bà con và với những thế mạnh, tiềm năng của xã, chúng tôi xác định hướng phát triển là du lịch cộng đồng, du lịch sinh thái, du lịch nghỉ dưỡng.</p>
+        <p class="a">Tôi mong muốn quảng bá để mọi người biết đến Vân Sơn nhiều hơn. Đặc biệt, tôi thực hiện việc này để bà con thấy được rằng ngay từ người lãnh đạo cũng có thể là người truyền cảm hứng, từ đó cùng thay đổi cách nghĩ, cách làm du lịch.</p>
+        <p class="a">Hiện nay, Vân Sơn là xã vùng cao với hơn 99% đồng bào dân tộc thiểu số. Trình độ phát triển còn chênh lệch khá nhiều so với các địa phương khác. Công tác chuyển đổi số cũng gặp nhiều khó khăn bởi thói quen sinh hoạt, sản xuất theo hướng tự cung tự cấp đã tồn tại từ lâu. Chính vì vậy, để thay đổi là cả một quá trình. Tôi cũng đã phải nghiên cứu, học hỏi và mất khá nhiều thời gian để suy nghĩ xem có nên thực hiện thử nghiệm này hay không.</p>
+
+        <p class="q">Từ một cán bộ lãnh đạo vốn quen với công việc quản lý, việc đứng trước ống kính và sáng tạo nội dung có khiến ông gặp nhiều khó khăn?</p>
+        <p class="a">Thời gian đầu thực sự rất vất vả. Từ việc chuẩn bị nội dung, ghi hình đến cách xây dựng video kéo dài chưa đầy một phút mà vẫn hấp dẫn, gần gũi với người xem, đặc biệt là các bạn trẻ và du khách. Tôi luôn cố gắng để người xem có thể nhanh chóng hình dung về cảnh quan, con người và những điều thú vị của Vân Sơn.</p>
+        <p class="a">Việc trực tiếp xuất hiện trước ống kính với vai trò người sáng tạo nội dung đối với tôi khá lạ lẫm. Làm sao để truyền tải được thông tin, cảm xúc về Vân Sơn một cách tự nhiên là điều không hề đơn giản. Có những lúc tôi phải đứng trước gương để tự tập nói, tự điều chỉnh cách thể hiện của mình.</p>
+
+        <p class="q">Việc một cán bộ địa phương xuất hiện trên mạng xã hội chắc hẳn cũng sẽ nhận về những ý kiến trái chiều, thưa ông?</p>
+        <p class="a">Theo quan điểm của tôi thì mọi việc đều có hai mặt. Có thể sẽ có người cho rằng mình làm như vậy là để đánh bóng hình ảnh cho bản thân. Điều đó hoàn toàn có thể xảy ra khi mình tham gia sáng tạo nội dung. Nhưng tôi không quá bận tâm.</p>
+        <p class="a">Điều tôi nhìn thấy là lợi ích mang lại lớn hơn rất nhiều. Với vai trò là người đứng đầu cấp xã, chịu trách nhiệm trước Đảng bộ, chính quyền và nhân dân về phát triển kinh tế - xã hội, đời sống người dân, tôi nghĩ rằng khi tham gia sáng tạo nội dung, mình có thể trở thành một nhân vật truyền cảm hứng.</p>
+        <p class="a">Không chỉ truyền cảm hứng cho cán bộ, công chức trong xã mà còn có thể lan tỏa tới nhiều địa phương khác. Từ khi tôi bắt đầu triển khai, trên các trang cá nhân đã rất nhiều người hỏi về Vân Sơn, hỏi về các điểm đến, về dịch vụ ăn uống, lưu trú, nghỉ dưỡng. Việc này cũng đang góp phần quảng bá cho các homestay, các dịch vụ du lịch địa phương và tạo thêm động lực để bà con mạnh dạn làm du lịch.</p>
       </div>
-
-      <p>Đoạn mở đầu mẫu để minh hoạ khoảng cách dòng, cỡ chữ và bề rộng cột đọc của bài longform. Văn bản này chỉ là placeholder.</p>
-      <h2>Một tiêu đề mục</h2>
-      <p>Nội dung đoạn văn mẫu. Khi có bản chính thức, phần này sẽ được thay thế hoàn toàn bằng nội dung và hình ảnh thật của bài viết.</p>
-      <blockquote>Một câu trích dẫn nổi bật sẽ trông như thế này trong bài.</blockquote>
-      <p>Đoạn kết mẫu của phần thân bài.</p>
     </div>
-  </article>
 
-  <footer class="art-footer">
-    <div class="col">
-      <a href="bai-1.html">← Bài 1</a>
-      <a href="../index.html">Trang chủ</a>
-      <a href="bai-3.html">Bài 3 →</a>
+    <!-- Ảnh 2 -->
+    <figure class="media">
+      <img src="../assets/img/bai-2/channel.jpg" alt="Kênh Bí thư xứ Mường trên mạng xã hội với hàng triệu lượt xem">
+      <figcaption>Chỉ sau vài ngày đăng tải những video đầu tiên, kênh “Bí thư xứ Mường” đã thu hút hàng triệu lượt xem.</figcaption>
+    </figure>
+
+    <div class="prose">
+      <p class="big">Công nghệ số và mạng xã hội đang trở thành cầu nối giữa vùng cao với thị trường. Từ những tác động bước đầu ấy, Bí thư Nguyễn Duy Tư kỳ vọng có thể từng bước thay đổi nhận thức của người dân về du lịch, kinh tế số và phát triển địa phương trong kỷ nguyên mới.</p>
     </div>
-  </footer>
+
+    <!-- SECTION 2 -->
+    <div class="section">
+      <span class="eyebrow">Phần 02</span>
+      <h2>Khát vọng về một Vân Sơn phát triển bền vững</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="prose">
+      <div class="qa">
+        <p class="q">Anh nhiều lần nhắc đến việc thay đổi tư duy của người dân. Điều anh mong muốn nhất sau những video quảng bá là gì?</p>
+        <p class="a">Điều tôi mong muốn nhất là thay đổi nhận thức, thay đổi cách làm của người dân. Tôi hướng tới việc mỗi công dân Vân Sơn đều có thể trở thành người quảng bá cho sản phẩm, văn hóa và vẻ đẹp quê hương mình.</p>
+        <p class="a">Bên cạnh đó, tôi cũng muốn góp phần kết nối, tiêu thụ nông sản cho bà con. Đây là mục tiêu kép mà tôi xác định trong mỗi nội dung: vừa quảng bá du lịch bản địa, vừa hỗ trợ phát triển kinh tế địa phương.</p>
+        <p class="a">Thực tế, Vân Sơn có rất nhiều lợi thế nhưng chưa được biết đến rộng rãi. Chúng tôi có khí hậu mát mẻ quanh năm, cảnh quan đẹp và nhiều sản phẩm nông nghiệp chất lượng. Từ ngọn su su, các loại rau ôn đới đến hạt gạo Đài Thơm 8 đều mang những đặc trưng riêng nhờ điều kiện thổ nhưỡng, khí hậu của vùng cao. Tôi tin rằng khi nhiều người biết đến Vân Sơn hơn, không chỉ du lịch được hưởng lợi mà nông sản địa phương cũng sẽ có thêm cơ hội tiếp cận thị trường.</p>
+
+        <p class="q">Có thể hiểu rằng phía sau câu chuyện quảng bá du lịch là mục tiêu phát triển kinh tế địa phương, thưa ông?</p>
+        <p class="a">Đúng vậy. Hiện nay tôi đang định hướng từ những sản phẩm rất đời thường trong cuộc sống của bà con để xây dựng thành các sản phẩm đặc trưng, hướng tới sản phẩm OCOP, hỗ trợ bao tiêu và hình thành các chuỗi liên kết sản xuất. Từ các hộ gia đình sẽ hình thành chuỗi liên kết trong hợp tác xã, từ đó cung ứng sản phẩm ra thị trường.</p>
+        <p class="a">Đây cũng là một trong ba khâu đột phá được xác định trong Nghị quyết Đại hội Đảng bộ xã: phát triển nông nghiệp gắn với phát triển du lịch. Chính vì vậy, công tác chuyển đổi số phải được quan tâm ngay từ đầu nhiệm kỳ. Chúng tôi phải phát hiện, nhân rộng những mô hình mới để ứng dụng vào đời sống người dân vùng cao.</p>
+        <p class="a">Bên cạnh đó, Nghị quyết 27 của Ban Thường vụ Tỉnh ủy Phú Thọ cũng xác định mục tiêu xây dựng khu du lịch vùng cao Vân Sơn đến năm 2030. Đây có thể nói là đòn bẩy và cũng là căn cứ pháp lý quan trọng của Đảng bộ xã, tạo thêm động lực để chúng tôi quyết tâm chuyển đổi số trong mọi mặt đời sống, tập trung phát triển du lịch gắn với nông nghiệp và đặc biệt là bản sắc văn hóa dân tộc Mường đậm đà nơi “nóc nhà” xứ Mường.</p>
+      </div>
+    </div>
+
+    <!-- Ảnh thêm: cảnh quan Vân Sơn -->
+    <figure class="media-2">
+      <img src="../assets/img/bai-2/thac-hieu.jpg" alt="Lãnh đạo địa phương thăm khu du lịch thác Hiêu">
+      <img src="../assets/img/bai-2/van-son.jpg" alt="Cảnh quan thác nước và núi rừng Vân Sơn">
+      <figcaption>Vân Sơn ở độ cao hơn 1.000m so với mực nước biển, khí hậu mát mẻ quanh năm cùng cảnh quan thác nước là tiềm năng lớn cho du lịch sinh thái.</figcaption>
+    </figure>
+
+    <div class="prose">
+      <div class="qa">
+        <p class="q">Sau khi thu hút sự chú ý trên mạng xã hội, anh có những định hướng gì để giữ chân du khách và tạo động lực cho người dân tham gia vào quá trình phát triển du lịch?</p>
+        <p class="a">Điều này đòi hỏi sự chuẩn bị lâu dài chứ không thể làm theo cảm hứng. Hiện nay trong cuốn sổ của tôi đã có hàng chục ý tưởng nội dung. Ngay từ khi đăng video đầu tiên, tôi đã chuẩn bị sẵn khoảng 6-7 video khác và đặt mục tiêu mỗi tháng duy trì từ 10-15 video.</p>
+        <p class="a">Ngoài quảng bá cảnh quan, tôi muốn phản ánh đời sống thường ngày ở vùng cao, từ lao động, sản xuất, sinh hoạt cho đến văn hóa của người Mường, từ trang phục đến tiếng nói. Đây là những yếu tố rất quan trọng để phát triển du lịch. Bên cạnh đó, tôi cũng muốn kể câu chuyện về nông sản địa phương, từ quá trình canh tác, thu hoạch đến chế biến — đều là những đề tài rất giàu chất liệu.</p>
+
+        <p class="q">Với cương vị người đứng đầu địa phương, anh hình dung như thế nào về tương lai chuyển đổi số của Vân Sơn?</p>
+        <p class="a">Ban Thường vụ Đảng ủy xã đã thông qua chủ trương xây dựng mô hình văn phòng số và từng bước hướng tới mô hình làng số. Chúng tôi dự kiến lựa chọn những thôn phát triển du lịch cộng đồng để triển khai trước. Dù điều kiện hạ tầng vẫn còn nhiều khó khăn nhưng chúng tôi quyết tâm thực hiện.</p>
+        <p class="a">Hiện nay tôi đang trực tiếp hướng dẫn một số chủ homestay xây dựng nội dung số, quảng bá dịch vụ và hình ảnh địa phương. Tôi muốn chính họ trở thành những nhân vật truyền cảm hứng cho cộng đồng.</p>
+      </div>
+    </div>
+
+    <div class="pullquote">
+      <p><span class="mark">“</span>Chuyển đổi số không phải là câu chuyện của riêng chính quyền, mà phải trở thành câu chuyện của mỗi người dân.<span class="mark">”</span></p>
+      <cite>Bí thư Nguyễn Duy Tư</cite>
+    </div>
+
+    <div class="prose">
+      <p class="big">Khi người dân có niềm tin, được đồng hành và chủ động tham gia, đó sẽ là động lực để Vân Sơn phát triển bền vững trong tương lai.</p>
+      <p>Điều Bí thư Nguyễn Duy Tư kỳ vọng là ngày càng có nhiều người biết đến Vân Sơn hơn, nhiều du khách tìm đến và nhiều người dân có thể tự kể câu chuyện quê hương mình trên không gian số — để công nghệ và truyền thông số trở thành một phần của hành trình thay đổi vùng đất nơi “nóc nhà” xứ Mường.</p>
+    </div>
+
+    <!-- BYLINE -->
+    <div class="byline">
+      <div class="endmark"></div>
+      <div class="credit">Nội dung · <b>Thu Ngân — Châu Sa</b></div>
+      <div class="credit">Thiết kế · <b>Bảo Ngọc</b></div>
+    </div>
+
+  </main>
+
+  <!-- NAV -->
+  <nav class="story-nav">
+    <div class="inner">
+      <a href="../index.html">← Về trang chủ</a>
+      <a href="bai-1.html">Bài khác: Học cùng AI, lớn lên từ trải nghiệm →</a>
+    </div>
+  </nav>
 
   <script>
     var bar = document.getElementById('progress');
+    var topbar = document.getElementById('topbar');
     addEventListener('scroll', function () {
       var h = document.documentElement;
-      var p = h.scrollTop / (h.scrollHeight - h.clientHeight);
-      bar.style.width = (p * 100) + '%';
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+      if (!topbar.classList.contains('always-solid'))
+        topbar.classList.toggle('solid', h.scrollTop > window.innerHeight * 0.6);
     }, { passive: true });
+
+    var menuBtn = document.getElementById('menuBtn');
+    var menuList = document.getElementById('menuList');
+    function closeMenu() { menuList.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+    menuBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var open = menuList.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (e) {
+      if (!document.getElementById('menu').contains(e.target)) closeMenu();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
   </script>
 </body>
 </html>
