@@ -1,0 +1,38 @@
+/* ============================================================
+   TIN 1 — ngôn ngữ thiết kế riêng
+   Amber/cam · hero căn giữa trên ảnh · dải số liệu nổi bật ·
+   ảnh bo góc. Nạp SAU story.css.
+   ============================================================ */
+body.theme-amber { --accent:#c9761b; --accent-dk:#a25c10; --bg-tint:#f8efe2; }
+
+/* ── HERO căn giữa ── */
+.hero { align-items: center; text-align: center; }
+.hero::after { background: linear-gradient(180deg, rgba(0,0,0,.36) 0%, rgba(0,0,0,.12) 38%, rgba(0,0,0,.8) 100%); }
+.hero-inner { max-width: 1040px; margin: 0 auto; padding-bottom: 96px; text-align: center; }
+.hero h1 { max-width: 22ch; margin: 0 auto; }
+.hero .dek { margin: 16px auto 0; }
+.hero .scrollcue { justify-content: center; }
+
+/* ── DẢI SỐ LIỆU nổi bật, đè lên đáy hero ── */
+.stats {
+  max-width: var(--wide); margin: -56px auto 0; position: relative; z-index: 6;
+  padding: 0 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+}
+.stat {
+  background: #fff; border-radius: 14px; border-top: 3px solid var(--accent);
+  box-shadow: 0 22px 54px rgba(20,15,5,.14); padding: 26px 18px; text-align: center;
+}
+.stat b {
+  display: block; font-family: var(--serif); font-weight: 800; color: var(--accent);
+  font-size: clamp(26px, 3.8vw, 42px); line-height: 1;
+}
+.stat span {
+  display: block; margin-top: 8px; font-size: 12.5px; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted);
+}
+@media (max-width: 640px) {
+  .stats { grid-template-columns: 1fr; gap: 12px; margin-top: -34px; }
+}
+
+/* ── MEDIA ── */
+.media img { border-radius: 8px; }

@@ -132,7 +132,8 @@ a { color: inherit; text-decoration: none; }
 
 /* ── ARTICLE WRAPPER ── */
 .story { max-width: var(--wide); margin: 0 auto; padding: 80px 24px 0; }
-.prose { max-width: var(--read); margin: 0 auto; }
+.prose { max-width: var(--read); margin: 0 auto; text-align: justify; text-justify: inter-word; }
+.prose .lead, .prose .intro-note { text-align: left; }
 
 /* lead / intro */
 .lead {

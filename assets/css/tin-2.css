@@ -1,0 +1,31 @@
+/* ============================================================
+   TIN 2 — ngôn ngữ thiết kế riêng
+   Navy/ink · cảm giác tư liệu - lưu trữ · hero ảnh + khung kép ·
+   mục căn trái gạch dọc · ảnh viền mảnh. Nạp SAU story.css.
+   ============================================================ */
+body.theme-navy { --accent:#27406b; --accent-dk:#1c3052; --bg-tint:#e9eef6; }
+
+/* ── HERO ảnh, khung kép kiểu tư liệu ── */
+.hero::after { background: linear-gradient(180deg, rgba(16,26,50,.5) 0%, rgba(16,26,50,.22) 40%, rgba(10,18,40,.92) 100%); }
+.hero-inner { border-top: 3px double rgba(255,255,255,.65); padding-top: 26px; max-width: 980px; }
+.hero h1 { font-family: var(--serif); }
+.hero .kicker { background: var(--accent); }
+
+/* ── SECTION: căn trái, gạch dọc kiểu hồ sơ ── */
+.section {
+  text-align: left; max-width: var(--read); margin: 72px auto 28px;
+  border-left: 4px solid var(--accent); padding-left: 22px;
+}
+.section .eyebrow { color: var(--accent); }
+.section h2 { text-align: left; }
+.section .rule { display: none; }
+
+/* ── MEDIA: viền mảnh kiểu hiện vật ── */
+.media img, .media-2 img { border: 1px solid var(--line); border-radius: 2px; background: #fff; }
+
+/* ── PULL-QUOTE: trích dẫn căn trái, gạch dày ── */
+.pullquote {
+  text-align: left; border-left: 6px solid var(--accent); border-radius: 0;
+  background: var(--bg-tint); padding: 34px 34px 34px 30px;
+}
+.pullquote p { max-width: none; }
