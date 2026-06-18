@@ -629,9 +629,7 @@ body.theme-red {
   .muong-hero-grid,
   .growth-board,
   .qa-turn,
-  .muong-chapter,
-  .muong-emag .media,
-  .muong-emag .media-2 {
+  .muong-chapter {
     grid-template-columns: 1fr;
   }
   .qa-q { position: static; }
@@ -684,11 +682,41 @@ body.theme-red {
   .muong-chapter .eyebrow {
     margin-bottom: 20px;
   }
+  .muong-emag .media,
+  .muong-emag .media-2 {
+    width: calc(100vw - 24px);
+    gap: 8px;
+  }
+  .muong-emag .media {
+    grid-template-columns: minmax(0, .64fr) minmax(112px, .36fr);
+    align-items: end;
+  }
+  .muong-emag .media figcaption {
+    padding: 12px;
+    font-size: 10px;
+    line-height: 1.45;
+  }
+  .muong-emag .media-2 {
+    grid-template-columns: 1.4fr 1fr;
+  }
   .muong-emag .media img,
   .muong-emag .media-2 img {
     min-height: auto;
     height: auto;
+  }
+  .muong-emag .media img {
     aspect-ratio: 16 / 10;
+  }
+  .muong-emag .media-2 img:first-child {
+    aspect-ratio: 16 / 11;
+  }
+  .muong-emag .media-2 img:last-child {
+    aspect-ratio: 4 / 3;
+  }
+  .muong-emag .media-2 figcaption {
+    font-size: 10px;
+    line-height: 1.45;
+    padding-top: 8px;
   }
 }
 

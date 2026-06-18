@@ -247,4 +247,29 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
   .hero .kicker { margin-bottom: 14px; }
   .hero .dek { margin-top: 16px; font-size: 15px; }
   .hero .scrollcue { margin-top: 20px; }
+  .media,
+  .media-2,
+  .media-3,
+  .media-split {
+    margin: 34px 0;
+  }
+  .media-2,
+  .media-3,
+  .media-split {
+    gap: 8px;
+  }
+  .media-split .col-right {
+    gap: 8px;
+  }
+  .media img,
+  .media-2 img,
+  .media-3 img,
+  .media-split img {
+    border-radius: 3px;
+  }
+  figcaption {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.45;
+  }
 }
