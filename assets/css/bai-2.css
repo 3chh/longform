@@ -86,6 +86,16 @@ body.theme-red {
   letter-spacing: .22em;
   text-transform: uppercase;
 }
+.hero-rubric span {
+  display: inline-block;
+  white-space: nowrap;
+}
+.hero-rubric span + span::before {
+  content: "·";
+  display: inline-block;
+  margin: 0 12px;
+  color: rgba(247,255,233,.45);
+}
 .muong-title h1 {
   margin-top: 18px;
   font-family: var(--display);
@@ -95,7 +105,7 @@ body.theme-red {
   font-weight: 900;
   text-transform: uppercase;
 }
-.muong-title h1 span {
+.muong-title h1 > span {
   display: block;
 }
 .muong-title h1 span.t-top {
@@ -103,6 +113,7 @@ body.theme-red {
   line-height: .98;
 }
 .muong-title h1 span.t-sub {
+  color: var(--accent);
   white-space: nowrap;
   font-size: clamp(38px, 6.4vw, 90px);
   line-height: 1;
@@ -110,6 +121,7 @@ body.theme-red {
   margin-top: .06em;
 }
 .muong-title h1 .t-and {
+  display: inline;
   text-transform: none;
   font-size: .4em;
   font-weight: 600;
@@ -117,6 +129,19 @@ body.theme-red {
   color: rgba(247,255,233,.62);
   margin-left: .5em;
   margin-right: .15em;
+}
+.muong-title h1 .nowrap {
+  display: inline;
+}
+.muong-title h1 .t-script-inline {
+  display: inline;
+  color: var(--accent-2);
+  font-family: "Dancing Script", cursive;
+  font-size: 1.34em;
+  font-weight: 700;
+  text-transform: none;
+  white-space: nowrap;
+  letter-spacing: 0;
 }
 .muong-title h1 span.t-script {
   color: var(--accent-2);
@@ -139,6 +164,9 @@ body.theme-red {
   font-size: clamp(18px, 2.1vw, 27px);
   line-height: 1.48;
   font-weight: 600;
+}
+.muong-title .dek .line {
+  display: block;
 }
 .muong-title .meta {
   margin-top: 22px;
@@ -174,7 +202,8 @@ body.theme-red {
 
 #xung-luc,
 #can-bo-so,
-#kinh-te-so,
+#du-lich-so,
+#ocop-lang-so,
 #lang-so,
 #ket-luan {
   scroll-margin-top: 112px;
@@ -263,7 +292,7 @@ body.theme-red {
 }
 
 /* MỤC LỤC dạng list — bấm để cuộn tới từng phần */
-#can-bo-so, #kinh-te-so, #ket-luan { scroll-margin-top: 84px; }
+#can-bo-so, #du-lich-so, #ocop-lang-so, #ket-luan { scroll-margin-top: 84px; }
 
 .muong-toc {
   width: min(980px, calc(100vw - 48px));
@@ -333,6 +362,9 @@ body.theme-red {
   font-size: 14.5px;
   line-height: 1.55;
 }
+.muong-toc .toc-d .line {
+  display: block;
+}
 
 .growth-board {
   width: min(1180px, calc(100vw - 48px));
@@ -397,10 +429,16 @@ body.theme-red {
 .growth-board dt {
   color: var(--accent-dk);
   font-family: var(--num);
-  font-size: clamp(38px, 5vw, 70px);
-  line-height: .92;
+  font-size: clamp(32px, 4.3vw, 58px);
+  line-height: .98;
   letter-spacing: -.01em;
   font-weight: 900;
+}
+.growth-board dt .nowrap {
+  display: block;
+  font-size: clamp(22px, 2.8vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -.02em;
 }
 .growth-board dd {
   margin-top: 14px;
@@ -640,8 +678,30 @@ body.theme-red {
     padding-top: 86px;
   }
   .muong-title h1 {
-    font-size: clamp(48px, 15vw, 84px);
+    font-size: clamp(46px, 13vw, 78px);
     line-height: .9;
+  }
+  .muong-title h1 span.t-top {
+    font-size: clamp(32px, 9.5vw, 42px);
+  }
+  .muong-title h1 span.t-sub {
+    font-size: clamp(28px, 8.6vw, 34px);
+  }
+  .hero-rubric {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    letter-spacing: .12em;
+  }
+  .hero-rubric span {
+    padding: 6px 9px;
+    background: rgba(247,255,233,.12);
+  }
+  .hero-rubric span + span::before {
+    content: none;
+  }
+  .muong-title h1 .t-script-inline {
+    font-size: 1.05em;
   }
   .muong-portrait {
     max-width: 360px;
