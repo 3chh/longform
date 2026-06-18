@@ -360,3 +360,23 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
     line-height: 1.45;
   }
 }
+
+/* Scroll reveal — nội dung hiện dần khi cuộn tới */
+.reveal-block {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity .72s ease, transform .72s cubic-bezier(.2, .8, .2, 1);
+  will-change: opacity, transform;
+}
+.reveal-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-block {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -260,6 +260,24 @@
       if (!document.getElementById('menu').contains(e.target)) closeMenu();
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+
+    // Scroll reveal — lướt tới đâu nội dung hiện tới đó
+    var revealItems = document.querySelectorAll('.story > .prose, .story > .story-map, .story > .section, .story > .insight-card, .story > figure, .story > .pullquote, .story > .byline');
+    revealItems.forEach(function (item) { item.classList.add('reveal-block'); });
+
+    if ('IntersectionObserver' in window) {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+      revealItems.forEach(function (item) { revealObserver.observe(item); });
+    } else {
+      revealItems.forEach(function (item) { item.classList.add('is-visible'); });
+    }
   </script>
 </body>
 </html>

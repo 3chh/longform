@@ -29,6 +29,8 @@ body.theme-navy {
   background: #17120f;
 }
 .press-hero .hero-img {
+  top: 54px;
+  height: calc(100% - 54px);
   filter: sepia(.18) saturate(.82) contrast(1.06);
   transform: none;
   object-fit: contain;
@@ -623,6 +625,16 @@ body.theme-navy {
     grid-column: 1;
     grid-row: 1;
     border-left-width: 5px;
+  }
+}
+
+/* Mobile: dek chảy mềm để tránh chữ mồ côi (giữ ngắt dòng desktop) */
+@media (max-width: 560px) {
+  .press-hero .dek .line {
+    display: inline;
+  }
+  .press-hero .dek .line::after {
+    content: " ";
   }
 }
 

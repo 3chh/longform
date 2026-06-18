@@ -528,6 +528,10 @@ body.theme-red {
   filter: saturate(1.08) contrast(1.04);
   transform: scale(1.025);
 }
+/* Screenshot trang MXH: giữ trọn header (avatar + tên + lượt theo dõi) ở trên */
+.qa-aside img[src*="profile"] {
+  object-position: center top;
+}
 .qa-aside figcaption {
   margin-top: 10px; color: var(--muted); font-size: 12.5px; line-height: 1.5;
   font-style: italic; text-align: left;
@@ -777,6 +781,18 @@ body.theme-red {
     font-size: 10px;
     line-height: 1.45;
     padding-top: 8px;
+  }
+}
+
+/* Mobile: cho dek/toc mô tả chảy mềm để tránh chữ mồ côi (giữ ngắt dòng desktop) */
+@media (max-width: 560px) {
+  .muong-title .dek .line,
+  .muong-toc .toc-d .line {
+    display: inline;
+  }
+  .muong-title .dek .line::after,
+  .muong-toc .toc-d .line::after {
+    content: " ";
   }
 }
 
