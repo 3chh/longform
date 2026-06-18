@@ -666,11 +666,26 @@ body.heritage-story::before { display: none; }
 }
 .end-credit b { color: var(--ink); }
 
-.art-footer {
-  background: var(--ink);
-  border-color: var(--ink);
+.story-nav {
+  border-top: 1px solid var(--line);
+  margin-top: 72px;
+  background: var(--paper);
 }
-.art-footer a { color: #fff8ea; }
+.story-nav .inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.story-nav a {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+.story-nav a:hover { color: var(--ink); }
 
 @media (max-width: 900px) {
   .memory-opening {
