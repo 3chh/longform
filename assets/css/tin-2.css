@@ -120,6 +120,8 @@ body.theme-navy {
   font-weight: 900;
   line-height: 1.12;
   letter-spacing: .005em;
+  border-bottom: 8px solid var(--accent);
+  padding-bottom: 18px;
 }
 .opening-mark em {
   display: inline;
@@ -299,7 +301,7 @@ body.theme-navy {
 .archive-spread {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  gap: 14px;
   background: #17120f;
   padding: 16px;
 }
@@ -312,6 +314,8 @@ body.theme-navy {
   border: 0;
   border-radius: 0;
 }
+/* ảnh phải: giữ phần bên trái (nội dung chính), cắt bớt phần bên phải */
+.archive-spread img:last-of-type { object-position: left; }
 .archive-spread figcaption {
   grid-column: 1 / -1;
   margin: 0;
