@@ -1,23 +1,40 @@
-# Longform
+﻿# Longform
 
-Trang web tuyển tập các bài longform chuyên sâu. Trang chủ (kiểu tienphong.vn/longform) liệt kê 4 bài; mỗi bài là một trang đọc dài theo phong cách editorial (tham khảo ELLE).
+Trang web tuyển tập các bài longform chuyên sâu. Trang chủ liệt kê các bài phỏng vấn, tin tức và eMagazine theo phong cách editorial.
 
 ## Cấu trúc
 
 ```
-index.html              Trang chủ (hub)
-articles/
-  bai-1.html            Bài 1 — "Học cùng AI, lớn lên từ trải nghiệm" (hoàn thành)
-  bai-2.html … bai-4.html   Template, chờ nội dung
-assets/
-  css/  home.css · story.css · article.css
-  img/  ảnh bìa + ảnh từng bài
+longform/                 Trang chủ (hub) — sẽ hiển thị tại /longform
+  index.html              Trang chủ
+  articles/
+    hoc-cung-ai-lon-len-tu-trai-nghiem.html
+    bi-thu-xu-muong-va-xung-luc-so.html
+    tra-sang-va-co-phuc.html
+    dua-ban-lang-len-khong-gian-so-dua-sinh-ke-ve-que-huong-van-son.html
+  tin/
+    gan-62-ty-dong-sau-3-ngay-ghi-hinh-mai-am-gia-dinh-viet.html
+    khai-mac-trung-bay-but-thep-long-son.html
+  assets/
+    css/  home.css · story.css · article.css
+    img/  ảnh bìa + ảnh từng bài
+vercel.json               Redirect / → /longform/
 ```
 
 ## Chạy thử
 
-Mở trực tiếp `index.html` bằng trình duyệt, hoặc chạy một static server:
+Mở trực tiếp `longform/index.html` bằng trình duyệt, hoặc chạy một static server:
 
 ```bash
-python -m http.server 8000   # rồi mở http://localhost:8000
+python -m http.server 8000   # rồi mở http://localhost:8000/longform/
 ```
+
+## Triển khai Vercel
+
+Khi deploy lên Vercel, trang chủ sẽ có dạng:
+
+```
+https://vudieuso.vercel.app/longform/
+```
+
+Và `https://vudieuso.vercel.app/` sẽ tự động chuyển hướng về `/longform/`.

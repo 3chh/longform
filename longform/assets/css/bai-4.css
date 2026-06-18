@@ -1,0 +1,741 @@
+/* Bai 4: eMagazine poster sequence inspired by financial magazine layouts. */
+:root {
+  --emag-blue: #1495df;
+  --emag-blue-deep: #0066b9;
+  --emag-green: #2b8d25;
+  --emag-yellow: #ffe11f;
+  --emag-ink: #14222b;
+  --emag-muted: #5f6c73;
+  --emag-line: rgba(20, 34, 43, .14);
+  --emag-paper: #ffffff;
+  --display: "Barlow Condensed", "Be Vietnam Pro", sans-serif;
+  --serif: "Playfair Display", Georgia, serif;
+  --font: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body.emag4 {
+  background: #fff;
+  color: var(--emag-ink);
+  font-family: var(--font);
+}
+
+.emag4 #progress { background: var(--emag-yellow); height: 4px; }
+
+.emag4 .topbar {
+  position: fixed;
+  inset: 0 0 auto;
+  background: rgba(20, 149, 223, .92);
+  border-bottom: 0;
+  box-shadow: 0 1px 0 rgba(255,255,255,.22);
+}
+
+.emag4 .topbar.solid {
+  background: rgba(20, 149, 223, .98);
+  box-shadow: 0 10px 30px rgba(0,102,185,.18);
+}
+
+.emag4 .topbar .home,
+.emag4 .menu-btn { color: #fff; }
+
+.emag4 .menu-list {
+  background: #fff;
+  border-color: rgba(0,102,185,.18);
+  box-shadow: 0 24px 70px rgba(0,102,185,.2);
+}
+
+.emag4 .menu-list a:hover {
+  background: rgba(20,149,223,.08);
+  color: var(--emag-blue-deep);
+}
+
+.line { display: block; }
+
+.emag-cover {
+  width: 100%;
+  min-height: 100svh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #8dd8ff;
+  isolation: isolate;
+}
+
+.emag-cover > img {
+  position: absolute;
+  inset: auto 0 0;
+  width: 100%;
+  height: 74%;
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: -3;
+}
+
+.emag-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(139,214,255,.98) 0%, rgba(139,214,255,.6) 36%, rgba(255,255,255,.05) 66%),
+    linear-gradient(0deg, rgba(255,255,255,.1), rgba(255,255,255,.1));
+}
+
+.emag-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 64%, rgba(0,78,45,.35) 100%);
+}
+
+.cover-blueprint {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 47%;
+  height: 2px;
+  background: var(--emag-blue-deep);
+  opacity: .76;
+}
+
+.cover-blueprint::before,
+.cover-blueprint::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 34px;
+  height: 18px;
+  border: 2px solid var(--emag-blue-deep);
+  border-top: 0;
+}
+
+.cover-blueprint::before { left: 12%; }
+.cover-blueprint::after { right: 12%; }
+
+.cover-badge {
+  position: absolute;
+  top: clamp(70px, 10vh, 108px);
+  left: 50%;
+  width: clamp(86px, 9vw, 132px);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: var(--emag-yellow);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 14px 0 rgba(0,102,185,.15);
+}
+
+.cover-badge span {
+  width: 55%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid var(--emag-blue);
+  position: relative;
+}
+
+.cover-badge span::before,
+.cover-badge span::after {
+  content: "";
+  position: absolute;
+  inset: 16%;
+  border: 3px solid var(--emag-blue);
+  border-radius: 50%;
+}
+
+.cover-badge span::after {
+  inset: -18px;
+  border-radius: 12px;
+  transform: rotate(45deg);
+  border-width: 5px;
+  opacity: .9;
+}
+
+.cover-title {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: clamp(178px, 21vh, 240px) 0 70px;
+  text-align: center;
+}
+
+.cover-kicker {
+  display: inline-flex;
+  color: #fff;
+  background: var(--emag-blue);
+  padding: 4px 14px 7px;
+  font-family: var(--display);
+  font-size: clamp(26px, 4vw, 48px);
+  line-height: .95;
+  letter-spacing: .02em;
+}
+
+.cover-title h1 {
+  margin: clamp(34px, 6vw, 66px) auto 0;
+  color: var(--emag-blue-deep);
+  font-family: var(--display);
+  font-size: clamp(58px, 10.2vw, 146px);
+  line-height: .82;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px #fff;
+  text-shadow: 0 4px 0 rgba(0,79,145,.18);
+}
+
+.cover-title h1 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.cover-script {
+  margin-top: clamp(24px, 4vw, 42px);
+  color: var(--emag-blue-deep);
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(38px, 6.5vw, 88px);
+  line-height: .95;
+  text-shadow: 0 2px 0 #fff;
+}
+
+.cover-meta {
+  margin-top: 26px;
+  color: #fff;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(14px, 1.4vw, 18px);
+  text-shadow: 0 2px 8px rgba(0,0,0,.22);
+}
+
+.emag-flow {
+  overflow: hidden;
+}
+
+.emag-text {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(30px, 5vw, 52px) max(18px, 3vw);
+}
+
+.intro-panel {
+  padding-top: clamp(46px, 7vw, 78px);
+}
+
+.emag-text p {
+  margin: 0 0 24px;
+  color: #172831;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.86;
+  text-align: justify;
+}
+
+.emag-text p:last-child { margin-bottom: 0; }
+
+.emag-text b {
+  font-weight: 900;
+}
+
+.emag-text em {
+  color: var(--emag-blue-deep);
+  font-family: var(--serif);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.12em;
+  line-height: 1.62;
+}
+
+.emag-toc {
+  max-width: 1120px;
+  margin: 4px auto 44px;
+  padding: 0 max(18px, 3vw);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.emag-toc a {
+  min-height: 98px;
+  padding: 18px 16px;
+  background: var(--emag-blue);
+  color: #fff;
+  font-weight: 900;
+  line-height: 1.25;
+  transition: transform .25s ease, background .25s ease;
+}
+
+.emag-toc a:hover {
+  transform: translateY(-7px);
+  background: var(--emag-green);
+}
+
+.emag-toc span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--emag-yellow);
+  font-family: var(--display);
+  font-size: 32px;
+  line-height: .8;
+}
+
+.image-poster {
+  width: 100vw;
+  min-height: min(760px, 92svh);
+  margin-left: calc(50% - 50vw);
+  position: relative;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  background: #0c2731;
+}
+
+.image-poster > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-poster::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0,40,70,.76), rgba(0,40,70,.16) 55%, rgba(0,40,70,.55)),
+    linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.72));
+}
+
+.poster-caption {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 36px));
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 96px) 0;
+  color: #fff;
+}
+
+.poster-caption span,
+.profile-text > span,
+.video-heading span,
+.craft-poster span {
+  display: block;
+  color: var(--emag-yellow);
+  font-family: var(--display);
+  font-size: clamp(34px, 5vw, 72px);
+  line-height: .8;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.poster-caption h2,
+.video-heading h2 {
+  margin-top: 22px;
+  font-family: var(--display);
+  font-size: clamp(48px, 9vw, 128px);
+  line-height: .8;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  -webkit-text-stroke: 1.4px rgba(255,255,255,.85);
+  text-shadow: 0 3px 0 rgba(0,0,0,.18);
+}
+
+.poster-caption h2 span,
+.video-heading h2 span {
+  display: block;
+}
+
+.poster-caption p {
+  max-width: 660px;
+  margin-top: 26px;
+  color: rgba(255,255,255,.86);
+  font-size: clamp(16px, 1.8vw, 21px);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.poster-caption.light {
+  color: #fff;
+}
+
+.profile-poster {
+  width: min(1120px, calc(100% - 32px));
+  margin: clamp(42px, 7vw, 82px) auto;
+  display: grid;
+  grid-template-columns: minmax(260px, 430px) 1fr;
+  align-items: stretch;
+  background: linear-gradient(135deg, #fff 0 54%, #e8f6ff 54% 100%);
+  box-shadow: 0 26px 80px rgba(0,102,185,.14);
+}
+
+.profile-art {
+  padding: clamp(16px, 3vw, 28px);
+  background: var(--emag-blue);
+}
+
+.profile-art img {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  object-position: center top;
+  border: 10px solid #fff;
+}
+
+.profile-text {
+  padding: clamp(34px, 6vw, 78px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-text h2 {
+  margin-top: 22px;
+  color: var(--emag-blue-deep);
+  font-family: var(--display);
+  font-size: clamp(58px, 9vw, 126px);
+  line-height: .82;
+  text-transform: uppercase;
+}
+
+.profile-text p {
+  margin-top: 22px;
+  color: #263841;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.profile-text blockquote {
+  margin: 28px 0 0;
+  padding-top: 24px;
+  border-top: 4px solid var(--emag-yellow);
+  color: var(--emag-green);
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.28;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.video-poster {
+  width: min(1120px, calc(100% - 32px));
+  margin: clamp(44px, 7vw, 86px) auto;
+  background: #0066b9;
+  color: #fff;
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  align-items: stretch;
+}
+
+.video-heading {
+  padding: clamp(28px, 5vw, 60px);
+  align-self: center;
+}
+
+.video-heading h2 {
+  color: #fff;
+  font-size: clamp(42px, 6vw, 82px);
+  -webkit-text-stroke: 0;
+}
+
+.video-heading p {
+  margin-top: 22px;
+  color: rgba(255,255,255,.82);
+  line-height: 1.68;
+}
+
+.video-poster video {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  background: #082536;
+}
+
+.stat-poster {
+  max-width: 1120px;
+  margin: 12px auto clamp(44px, 7vw, 80px);
+  padding: 0 max(18px, 3vw);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.stat-poster div {
+  min-height: 180px;
+  padding: 26px;
+  background: linear-gradient(180deg, #fff 0 50%, #eaf7ff 50% 100%);
+  border: 2px solid var(--emag-blue);
+}
+
+.stat-poster b {
+  display: block;
+  color: var(--emag-green);
+  font-family: var(--display);
+  font-size: clamp(58px, 8vw, 104px);
+  line-height: .8;
+}
+
+.stat-poster span {
+  display: block;
+  margin-top: 20px;
+  color: #31434c;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.quote-poster {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: clamp(62px, 9vw, 116px) max(24px, calc((100vw - 1120px) / 2));
+  background:
+    radial-gradient(circle at 10% 15%, rgba(255,225,31,.24), transparent 16rem),
+    radial-gradient(circle at 88% 80%, rgba(43,141,37,.26), transparent 16rem),
+    var(--emag-blue);
+  color: #fff;
+}
+
+.quote-poster p {
+  max-width: 1080px;
+  margin: 0 auto;
+  font-family: var(--serif);
+  font-size: clamp(36px, 6vw, 82px);
+  line-height: 1.08;
+  font-style: italic;
+  font-weight: 900;
+  text-align: center;
+}
+
+.craft-poster {
+  max-width: 1120px;
+  margin: clamp(40px, 7vw, 78px) auto;
+  padding: 0 max(18px, 3vw);
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 0;
+  align-items: stretch;
+}
+
+.craft-poster div {
+  padding: clamp(34px, 6vw, 76px);
+  background: var(--emag-yellow);
+  color: var(--emag-ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.craft-poster span { color: var(--emag-blue-deep); }
+
+.craft-poster p {
+  margin-top: 24px;
+  font-family: var(--serif);
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: 1.14;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.craft-poster img {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+}
+
+.closing-poster {
+  width: min(1120px, calc(100% - 32px));
+  margin: clamp(46px, 8vw, 92px) auto 0;
+  position: relative;
+  background: #0a5c34;
+  color: #fff;
+}
+
+.closing-poster img {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  object-position: center;
+  opacity: .86;
+}
+
+.closing-poster div {
+  padding: clamp(26px, 4vw, 48px);
+}
+
+.closing-poster p {
+  max-width: 920px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(28px, 4.4vw, 58px);
+  line-height: 1.13;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.closing-poster small {
+  display: block;
+  margin-top: 18px;
+  color: rgba(255,255,255,.78);
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.final-text {
+  padding-bottom: 24px;
+}
+
+.emag-credit {
+  max-width: 1120px;
+  margin: 0 auto clamp(52px, 7vw, 82px);
+  padding: 24px max(18px, 3vw) 0;
+  border-top: 1px solid var(--emag-line);
+}
+
+.emag-credit span {
+  display: block;
+  color: var(--emag-muted);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.emag-credit span + span { margin-top: 8px; }
+.emag-credit b { color: var(--emag-ink); }
+
+.emag4 .story-nav {
+  background: var(--emag-blue);
+  border-top: 0;
+}
+
+.emag4 .story-nav a {
+  color: #fff;
+}
+
+.emag4 .story-nav a:hover {
+  color: var(--emag-yellow);
+}
+
+.reveal-block {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 920px) {
+  .emag-toc,
+  .profile-poster,
+  .video-poster,
+  .stat-poster,
+  .craft-poster {
+    grid-template-columns: 1fr;
+  }
+
+  .emag-toc {
+    gap: 6px;
+  }
+
+  .profile-art img,
+  .video-poster video,
+  .craft-poster img {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .emag-cover {
+    min-height: 100svh;
+    place-items: end center;
+  }
+
+  .emag-cover > img {
+    height: 70%;
+  }
+
+  .cover-title {
+    width: min(100% - 24px, 1180px);
+    padding: 122px 0 38px;
+  }
+
+  .cover-title h1 {
+    font-size: clamp(40px, 11.7vw, 54px);
+    -webkit-text-stroke: 1px #fff;
+  }
+
+  .cover-script {
+    font-size: clamp(28px, 8.4vw, 42px);
+  }
+
+  .cover-badge {
+    top: 74px;
+    width: 70px;
+  }
+
+  .cover-blueprint {
+    top: 43%;
+    left: 5%;
+    right: 5%;
+  }
+
+  .emag-text p {
+    font-size: 17px;
+    line-height: 1.78;
+  }
+
+  .image-poster {
+    min-height: 72svh;
+  }
+
+  .poster-caption h2 {
+    font-size: clamp(42px, 13vw, 62px);
+    -webkit-text-stroke: 1px rgba(255,255,255,.82);
+  }
+
+  .poster-caption span,
+  .profile-text > span,
+  .video-heading span,
+  .craft-poster span {
+    font-size: 34px;
+  }
+
+  .profile-text,
+  .video-heading,
+  .craft-poster div {
+    padding: 28px;
+  }
+
+  .profile-text h2 {
+    font-size: 56px;
+  }
+
+  .stat-poster {
+    gap: 10px;
+  }
+
+  .stat-poster div {
+    min-height: 130px;
+  }
+
+  .quote-poster p,
+  .closing-poster p {
+    text-align: left;
+  }
+
+  .closing-poster img {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-block {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
