@@ -442,10 +442,11 @@ body.theme-red {
 }
 .growth-board dd {
   margin-top: 14px;
-  color: var(--muted);
-  font-size: 12.5px;
+  color: #3a4842;
+  font-size: 13px;
+  font-weight: 700;
   line-height: 1.45;
-  letter-spacing: .1em;
+  letter-spacing: .08em;
   text-transform: uppercase;
 }
 

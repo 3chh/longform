@@ -258,10 +258,12 @@ body.theme-navy {
   overflow: hidden;
   min-height: 330px;
   padding: clamp(24px, 3vw, 40px);
+  padding-bottom: clamp(48px, 5vw, 64px);
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: clamp(14px, 1.4vw, 22px);
   cursor: pointer;
   transition: transform .32s ease, background .32s ease, box-shadow .32s ease;
 }
@@ -289,7 +291,8 @@ body.theme-navy {
   transform: scaleX(1);
 }
 .press-timeline article:last-child { border-right: 0; }
-.press-timeline span {
+.press-timeline article > span {
+  display: block;
   color: var(--accent);
   font-family: var(--serif);
   font-size: clamp(46px, 6vw, 84px);

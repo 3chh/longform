@@ -50,7 +50,7 @@ body.emag4 {
   color: var(--emag-blue-deep);
 }
 
-.line { display: block; }
+.line { display: block; text-wrap: balance; }
 
 .emag-cover {
   width: 100%;
@@ -201,7 +201,7 @@ body.emag4 {
   font-weight: 900;
   font-size: clamp(38px, 6.5vw, 88px);
   line-height: .95;
-  text-shadow: 0 2px 0 #fff;
+  text-shadow: 0 2px 0 #fff, 0 0 20px rgba(255,255,255,.9), 0 0 6px rgba(255,255,255,.9);
 }
 
 .cover-meta {
@@ -333,6 +333,10 @@ body.emag4 {
   text-transform: uppercase;
   letter-spacing: .02em;
 }
+/* Kicker trên nền sáng: vàng chìm → dùng xanh đậm cho dễ đọc */
+.profile-text > span { color: var(--emag-blue-deep); }
+/* Kicker trên ảnh: thêm bóng để nẩy khỏi vùng ảnh sáng (vd section 04) */
+.poster-caption span { text-shadow: 0 2px 12px rgba(0,0,0,.45); }
 
 .poster-caption h2,
 .video-heading h2 {
@@ -415,7 +419,7 @@ body.emag4 {
   margin: 28px 0 0;
   padding-top: 24px;
   border-top: 4px solid var(--emag-yellow);
-  color: var(--emag-green);
+  color: var(--emag-blue-deep);
   font-family: var(--serif);
   font-size: clamp(24px, 3vw, 36px);
   line-height: 1.28;
@@ -536,8 +540,8 @@ body.emag4 {
 .craft-poster p {
   margin-top: 24px;
   font-family: var(--serif);
-  font-size: clamp(30px, 4vw, 54px);
-  line-height: 1.14;
+  font-size: clamp(26px, 3.2vw, 44px);
+  line-height: 1.18;
   font-weight: 900;
   font-style: italic;
 }
@@ -553,7 +557,7 @@ body.emag4 {
   width: min(1120px, calc(100% - 32px));
   margin: clamp(46px, 8vw, 92px) auto 0;
   position: relative;
-  background: #0a5c34;
+  background: #084a82;
   color: #fff;
 }
 
@@ -582,7 +586,7 @@ body.emag4 {
 .closing-poster small {
   display: block;
   margin-top: 18px;
-  color: rgba(255,255,255,.78);
+  color: rgba(255,255,255,.88);
   font-style: italic;
   line-height: 1.55;
 }
