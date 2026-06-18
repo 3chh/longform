@@ -22,7 +22,7 @@
 <body class="heritage-story">
   <div id="progress"></div>
 
-  <div class="topbar always-solid" id="topbar">
+  <div class="topbar" id="topbar">
     <div class="inner">
       <a class="home" href="../index.html"><svg class="back-arrow" width="24" height="14" viewBox="0 0 24 14" aria-hidden="true"><path d="M23 7H1m0 0l6.5-6M1 7l6.5 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Long Form</a>
       <div class="menu" id="menu">
@@ -51,7 +51,7 @@
     </figure>
     <div class="memory-title">
       <span>Kính Vạn Hoa · Kaleidoscope of the Past</span>
-      <h1><span class="hero-line-tra">Trà sáng</span><span class="hero-line-co"><span class="hero-and">và</span><span class="hero-co">cổ phục</span></span></h1>
+      <h1><span class="hero-line-tra">Trà sáng</span><span class="hero-line-co"><span class="hero-and">và</span><span class="hero-co">Cổ phục</span></span></h1>
       <p>Tọa đàm mở hướng nhìn về<br>tương lai của cổ phục Việt</p>
       <div>Thu Ngân · 18/06/2026 · 6 phút đọc</div>
     </div>
@@ -142,10 +142,12 @@
     });
 
     var bar = document.getElementById('progress');
+    var topbar = document.getElementById('topbar');
     addEventListener('scroll', function () {
       var h = document.documentElement;
       var max = h.scrollHeight - h.clientHeight;
       bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+      topbar.classList.toggle('solid', h.scrollTop > window.innerHeight * 0.55);
     }, { passive: true });
 
     var menuBtn = document.getElementById('menuBtn');

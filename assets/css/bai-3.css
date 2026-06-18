@@ -27,6 +27,19 @@ body.heritage-story::before { display: none; }
 
 #progress { background: var(--accent); }
 .topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
+}
+.topbar.solid {
   background: rgba(242,230,209,.94);
   border-color: var(--line);
   backdrop-filter: blur(10px);
@@ -41,20 +54,31 @@ body.heritage-story::before { display: none; }
 }
 .topbar a,
 .topbar .menu-btn {
+  color: #fff8ea;
+}
+.topbar.solid a,
+.topbar.solid .menu-btn {
   color: var(--ink);
 }
 .topbar .home {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  color: var(--ink);
+  color: #fff8ea;
   font-size: 12px;
   font-weight: 900;
   letter-spacing: .14em;
   text-transform: uppercase;
 }
+.topbar.solid .home {
+  color: var(--ink);
+}
 .topbar .home:hover,
 .menu-btn:hover {
+  color: var(--silk);
+}
+.topbar.solid .home:hover,
+.topbar.solid .menu-btn:hover {
   color: var(--accent);
 }
 .back-arrow {
@@ -70,7 +94,7 @@ body.heritage-story::before { display: none; }
   padding: 0;
   border: 0;
   background: none;
-  color: var(--ink);
+  color: #fff8ea;
   font: 900 12px/1 var(--font);
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -199,6 +223,7 @@ body.heritage-story::before { display: none; }
   line-height: .82;
   letter-spacing: -.055em;
   text-transform: none;
+  transform: translateX(clamp(10px, 2vw, 28px));
 }
 .memory-title .hero-line-co {
   display: flex;
@@ -425,11 +450,11 @@ body.heritage-story::before { display: none; }
 .spread-title h2 .line-khi {
   color: rgba(255,248,234,.72);
   font-family: "Be Vietnam Pro", system-ui, sans-serif;
-  font-size: clamp(15px, 1.7vw, 22px);
+  font-size: clamp(18px, 2vw, 28px);
   font-weight: 800;
   line-height: 1;
   letter-spacing: .16em;
-  text-transform: lowercase;
+  text-transform: none;
   margin-bottom: 10px;
 }
 .spread-title h2 .line-trang-phuc {
