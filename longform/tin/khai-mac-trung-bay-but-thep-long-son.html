@@ -60,14 +60,6 @@
 
   <!-- ARTICLE -->
   <main class="story press-story">
-    <nav class="press-jump" aria-label="Đi tới từng phần trong bài">
-      <a href="#mo-bai">Mở bài</a>
-      <a href="#bao-chi-cach-mang">Báo chí</a>
-      <a href="#but-thep">Bút thép</a>
-      <a href="#chien-truong">Chiến trường</a>
-      <a href="#tiep-noi">Tiếp nối</a>
-    </nav>
-
     <section class="press-opening" id="mo-bai">
       <div class="opening-mark">
         <span>101 năm</span>
@@ -203,13 +195,6 @@
       history.replaceState(null, '', hash);
     }
 
-    document.querySelectorAll('.press-jump a').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        scrollToSection(link.getAttribute('href'));
-      });
-    });
-
     document.querySelectorAll('.press-timeline article[data-target]').forEach(function (card) {
       card.addEventListener('click', function () {
         scrollToSection(card.getAttribute('data-target'));
@@ -231,19 +216,6 @@
         });
       }, { threshold: 0.14 });
       revealItems.forEach(function (item) { revealObserver.observe(item); });
-
-      var jumpLinks = document.querySelectorAll('.press-jump a');
-      var sectionObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          jumpLinks.forEach(function (link) {
-            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
-          });
-        });
-      }, { rootMargin: '-35% 0px -50% 0px', threshold: 0.01 });
-      document.querySelectorAll('#mo-bai, #bao-chi-cach-mang, #but-thep, #chien-truong, #tiep-noi').forEach(function (section) {
-        sectionObserver.observe(section);
-      });
     } else {
       revealItems.forEach(function (item) { item.classList.add('is-visible'); });
     }

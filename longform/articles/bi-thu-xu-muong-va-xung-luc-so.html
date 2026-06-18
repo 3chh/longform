@@ -77,39 +77,6 @@
       <p class="intro-note">Phóng viên đã có cuộc trao đổi với đồng chí Nguyễn Duy Tư — Bí thư Đảng uỷ xã Vân Sơn, tỉnh Phú Thọ; Chủ tịch HĐND xã Vân Sơn — để tìm hiểu động lực, kỳ vọng và hành trình đưa bản làng lên không gian số.</p>
     </div>
 
-    <nav class="muong-toc" aria-label="Mục lục bài viết">
-      <span class="toc-eyebrow">Trong bài này</span>
-      <ol>
-        <li><a href="#can-bo-so">
-          <span class="toc-n">01</span>
-          <span class="toc-body">
-            <span class="toc-t">Người cán bộ số gần dân</span>
-            <span class="toc-d"><span class="line">Cán bộ cơ sở bước vào không gian mạng,</span><span class="line">kể câu chuyện địa phương bằng ngôn ngữ gần gũi.</span></span>
-          </span>
-        </a></li>
-        <li><a href="#du-lich-so">
-          <span class="toc-n">02</span>
-          <span class="toc-body">
-            <span class="toc-t">Du lịch cộng đồng bước vào không gian mạng</span>
-            <span class="toc-d"><span class="line">Cảnh quan, homestay và đời sống vùng cao</span><span class="line">được kể bằng video ngắn và mạng xã hội.</span></span>
-          </span>
-        </a></li>
-        <li><a href="#ocop-lang-so">
-          <span class="toc-n">03</span>
-          <span class="toc-body">
-            <span class="toc-t">Từ nông sản, OCOP đến mô hình làng số</span>
-            <span class="toc-d"><span class="line">Sản vật địa phương, chuỗi liên kết</span><span class="line">và mô hình làng số cùng đi vào câu chuyện phát triển.</span></span>
-          </span>
-        </a></li>
-        <li><a href="#ket-luan">
-          <span class="toc-n toc-end">—</span>
-          <span class="toc-body">
-            <span class="toc-t">Kết luận</span>
-          </span>
-        </a></li>
-      </ol>
-    </nav>
-
     <aside class="growth-board" aria-label="Bảng dữ kiện phát triển Vân Sơn">
       <div class="growth-copy">
         <span>Xung lực mới</span>
@@ -308,14 +275,7 @@
       history.replaceState(null, '', hash);
     }
 
-    document.querySelectorAll('.muong-toc a').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        scrollToSection(link.getAttribute('href'));
-      });
-    });
-
-    var revealItems = document.querySelectorAll('.muong-emag > .prose, .muong-toc, .growth-board, .muong-chapter, .qa-turn, .pullquote, .byline');
+    var revealItems = document.querySelectorAll('.muong-emag > .prose, .growth-board, .muong-chapter, .qa-turn, .pullquote, .byline');
     revealItems.forEach(function (item) { item.classList.add('reveal-block'); });
 
     if ('IntersectionObserver' in window) {
@@ -325,19 +285,6 @@
         });
       }, { threshold: 0.14 });
       revealItems.forEach(function (item) { revealObserver.observe(item); });
-
-      var jumpLinks = document.querySelectorAll('.muong-toc a');
-      var sectionObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          jumpLinks.forEach(function (link) {
-            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
-          });
-        });
-      }, { rootMargin: '-35% 0px -50% 0px', threshold: 0.01 });
-      document.querySelectorAll('#can-bo-so, #du-lich-so, #ocop-lang-so, #ket-luan').forEach(function (section) {
-        sectionObserver.observe(section);
-      });
     } else {
       revealItems.forEach(function (item) { item.classList.add('is-visible'); });
     }

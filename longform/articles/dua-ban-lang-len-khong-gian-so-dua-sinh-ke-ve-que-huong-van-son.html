@@ -69,14 +69,6 @@
       <p><b>Điều Vân Sơn (Phú Thọ) thiếu suốt nhiều năm không phải là cảnh đẹp hay bản sắc văn hóa mà là cơ hội để những giá trị ấy được nhiều người biết đến.</b> Khi công nghệ số trở thành cầu nối giữa bản làng và du khách, một hướng phát triển mới đang dần hình thành trên vùng đất này.</p>
     </section>
 
-    <nav class="emag-toc reveal-block" aria-label="Mục lục bài viết">
-      <a href="#thi-truong"><span>01</span>Tiềm năng</a>
-      <a href="#nguoi-tro-ve"><span>02</span>Người trở về</a>
-      <a href="#niem-tin"><span>03</span>Niềm tin</a>
-      <a href="#trai-nghiem"><span>04</span>Trải nghiệm</a>
-      <a href="#lang-so"><span>05</span>Làng số</a>
-    </nav>
-
     <section class="image-poster poster-market reveal-block" id="thi-truong">
       <img src="../assets/img/bai-4/market.jpg" alt="Không gian chợ phiên trên mây của cộng đồng người Mường ở Vân Sơn">
       <div class="poster-caption">
@@ -236,16 +228,6 @@
     });
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') closeMenu();
-    });
-
-    var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    document.querySelectorAll('.emag-toc a').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        var target = document.querySelector(link.getAttribute('href'));
-        if (!target) return;
-        event.preventDefault();
-        target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-      });
     });
 
     var revealItems = document.querySelectorAll('.reveal-block');
