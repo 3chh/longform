@@ -58,8 +58,15 @@
 
   <!-- ARTICLE -->
   <main class="story press-story">
+    <nav class="press-jump" aria-label="Đi tới từng phần trong bài">
+      <a href="#mo-bai">Mở bài</a>
+      <a href="#bao-chi-cach-mang">Báo chí</a>
+      <a href="#but-thep">Bút thép</a>
+      <a href="#chien-truong">Chiến trường</a>
+      <a href="#tiep-noi">Tiếp nối</a>
+    </nav>
 
-    <section class="press-opening">
+    <section class="press-opening" id="mo-bai">
       <div class="opening-mark">
         <span>101 năm</span>
         21/6/1925<br>
@@ -72,24 +79,24 @@
     </section>
 
     <section class="press-timeline" aria-label="Ba tuyến nội dung của trưng bày">
-      <article>
+      <article data-target="#bao-chi-cach-mang" tabindex="0" role="button">
         <span>01</span>
         <h2>Báo chí Cách mạng Việt Nam</h2>
         <p>Những dấu mốc lịch sử, từ Báo Thanh Niên năm 1925 đến dòng chảy báo chí cách mạng qua các thời kỳ.</p>
       </article>
-      <article>
+      <article data-target="#but-thep" tabindex="0" role="button">
         <span>02</span>
         <h2>Bút thép, lòng son</h2>
         <p>Câu chuyện về những trang báo bí mật, những chiến sĩ cầm bút trong nhà tù thực dân và trên chiến trường.</p>
       </article>
-      <article>
+      <article data-target="#tiep-noi" tabindex="0" role="button">
         <span>03</span>
         <h2>Tiếp nối dòng chảy</h2>
         <p>Không gian để công chúng trẻ tiếp cận tư liệu bằng hình ảnh, hiện vật và các lớp thuyết minh số.</p>
       </article>
     </section>
 
-    <div class="prose press-lede">
+    <div class="prose press-lede" id="bao-chi-cach-mang">
       <p class="lead">Sáng 16/6, tại Di tích lịch sử Nhà tù Hỏa Lò (Hà Nội), Ban Quản lý Di tích Nhà tù Hỏa Lò khai mạc trưng bày chuyên đề “Bút thép, lòng son” nhân kỷ niệm 101 năm Ngày Báo chí Cách mạng Việt Nam (21/6/1925 – 21/6/2026).</p>
       <p>Trưng bày được tổ chức dưới sự chỉ đạo của Sở Văn hóa và Thể thao Hà Nội nhằm tôn vinh những người làm báo cách mạng qua các thời kỳ, đồng thời tri ân các nhà báo, chiến sĩ đã cống hiến và hy sinh vì sự nghiệp đấu tranh giải phóng dân tộc, xây dựng và bảo vệ Tổ quốc.</p>
       <p>Với ba nội dung chính gồm “Báo chí Cách mạng Việt Nam — Những dấu mốc lịch sử”, “Bút thép, lòng son” và “Tiếp nối dòng chảy”, trưng bày tái hiện hành trình hơn một thế kỷ phát triển của nền báo chí cách mạng, đưa người xem ngược dòng thời gian trở về những ngày đầu hình thành với dấu mốc ra đời của Báo Thanh Niên do lãnh tụ Nguyễn Ái Quốc sáng lập năm 1925. Từ đó, báo chí không chỉ là phương tiện truyền tải thông tin mà còn trở thành công cụ tuyên truyền, giác ngộ và tập hợp quần chúng tham gia cách mạng.</p>
@@ -100,7 +107,7 @@
       <figcaption>Không gian trưng bày chuyên đề “Bút thép, lòng son” tại Di tích lịch sử Nhà tù Hỏa Lò.</figcaption>
     </figure>
 
-    <section class="archive-chapter">
+    <section class="archive-chapter" id="but-thep">
       <div class="chapter-number">1925</div>
       <div class="chapter-copy">
         <span>Điểm nhấn</span>
@@ -123,7 +130,7 @@
       <p>Từ những trang giấy viết tay thô sơ đến những bản tin bí mật được chuyền tay trong lao tù, tất cả đều cho thấy sức mạnh của ngòi bút trong hành trình đấu tranh giành độc lập dân tộc.</p>
     </aside>
 
-    <section class="archive-chapter archive-chapter--right">
+    <section class="archive-chapter archive-chapter--right" id="chien-truong">
       <div class="chapter-number">1946<br>- 1954</div>
       <div class="chapter-copy">
         <span>Dòng chảy</span>
@@ -139,7 +146,7 @@
       <p>Chuyên đề “Bút thép, lòng son” mở cửa phục vụ công chúng từ nay đến hết ngày 15/11/2026 tại Di tích lịch sử Nhà tù Hỏa Lò, Hà Nội.</p>
     </div>
 
-    <figure class="media press-final">
+    <figure class="media press-final" id="tiep-noi">
       <img src="../assets/img/tin-2/g4.jpg" alt="Khách tham quan tìm hiểu tư liệu tại trưng bày">
       <figcaption>Khách tham quan tìm hiểu tư liệu lịch sử thông qua hệ thống trưng bày kết hợp công nghệ số.</figcaption>
     </figure>
@@ -184,6 +191,59 @@
       if (!document.getElementById('menu').contains(e.target)) closeMenu();
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+
+    var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function scrollToSection(hash) {
+      var target = document.querySelector(hash);
+      if (!target) return;
+      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      history.replaceState(null, '', hash);
+    }
+
+    document.querySelectorAll('.press-jump a').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        scrollToSection(link.getAttribute('href'));
+      });
+    });
+
+    document.querySelectorAll('.press-timeline article[data-target]').forEach(function (card) {
+      card.addEventListener('click', function () {
+        scrollToSection(card.getAttribute('data-target'));
+      });
+      card.addEventListener('keydown', function (event) {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        scrollToSection(card.getAttribute('data-target'));
+      });
+    });
+
+    var revealItems = document.querySelectorAll('.press-opening, .press-timeline, .press-lede, .press-cover, .archive-chapter, .press-body, .archive-spread, .press-quote, .press-final, .byline');
+    revealItems.forEach(function (item) { item.classList.add('reveal-block'); });
+
+    if ('IntersectionObserver' in window) {
+      var revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, { threshold: 0.14 });
+      revealItems.forEach(function (item) { revealObserver.observe(item); });
+
+      var jumpLinks = document.querySelectorAll('.press-jump a');
+      var sectionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          jumpLinks.forEach(function (link) {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        });
+      }, { rootMargin: '-35% 0px -50% 0px', threshold: 0.01 });
+      document.querySelectorAll('#mo-bai, #bao-chi-cach-mang, #but-thep, #chien-truong, #tiep-noi').forEach(function (section) {
+        sectionObserver.observe(section);
+      });
+    } else {
+      revealItems.forEach(function (item) { item.classList.add('is-visible'); });
+    }
   </script>
 </body>
 </html>

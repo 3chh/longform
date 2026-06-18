@@ -136,6 +136,7 @@ a { color: inherit; text-decoration: none; }
 .tag.t-red   { background: rgba(187,47,42,.92); }
 .tag.t-amber { background: rgba(201,118,27,.95); }
 .tag.t-navy  { background: rgba(47,85,151,.95); }
+.tag.t-plum  { background: rgba(111,54,84,.94); }
 .kicker.t-green { background: #3f6b3a; }
 .card-thumb.thumb-text {
   display: flex; align-items: center; justify-content: center; text-align: center;
