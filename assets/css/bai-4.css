@@ -1,0 +1,217 @@
+/* Bai 4: technical dossier / blueprint language. */
+:root {
+  --accent: #7cc7ff;
+  --ink: #eaf6ff;
+  --text: #c9d8e4;
+  --muted: #86a4bb;
+  --line: rgba(124,199,255,.28);
+  --bg: #09243e;
+  --band: #0d2f50;
+  --col: 780px;
+  --font: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+}
+
+body.blueprint-story {
+  background:
+    linear-gradient(rgba(124,199,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,199,255,.08) 1px, transparent 1px),
+    radial-gradient(circle at 82% 12%, rgba(124,199,255,.16), transparent 28%),
+    var(--bg);
+  background-size: 30px 30px, 30px 30px, auto, auto;
+  color: var(--text);
+}
+#progress { background: var(--accent); }
+.topbar {
+  background: rgba(9,36,62,.88);
+  border-color: var(--line);
+}
+.topbar a { color: var(--ink); }
+
+.blueprint-hero {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: clamp(42px, 7vw, 90px) 24px 46px;
+  min-height: calc(100svh - 56px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  align-items: center;
+  position: relative;
+}
+.blueprint-copy {
+  position: relative;
+  z-index: 2;
+  width: min(760px, 72vw);
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid var(--line);
+  background: rgba(7,29,51,.72);
+  backdrop-filter: blur(10px);
+}
+.blueprint-copy::before {
+  content: "DOSSIER-004";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  color: rgba(124,199,255,.42);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .18em;
+}
+.blueprint-copy .kicker,
+.brief-board span {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+.blueprint-copy h1 {
+  margin-top: 24px;
+  color: var(--ink);
+  font-size: clamp(64px, 12vw, 176px);
+  line-height: .78;
+  letter-spacing: -.09em;
+  font-weight: 900;
+}
+.blueprint-copy .sapo {
+  margin-top: 28px;
+  color: var(--text);
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.62;
+}
+.blueprint-copy .byline {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+.blueprint-visual {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  width: min(620px, 48vw);
+  transform: translateY(-48%) rotate(2deg);
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: rgba(7,29,51,.62);
+  box-shadow: -32px 34px 0 rgba(124,199,255,.08);
+}
+.blueprint-visual img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  mix-blend-mode: luminosity;
+  opacity: .86;
+  filter: contrast(1.14);
+}
+.blueprint-visual figcaption,
+.blueprint-article figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.blueprint-main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 24px 86px;
+}
+.brief-board {
+  display: block;
+  max-width: 980px;
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+}
+.brief-board div {
+  min-height: 220px;
+  width: min(720px, 100%);
+  padding: clamp(24px, 4vw, 40px);
+  border: 1px solid var(--line);
+  background: rgba(7,29,51,.72);
+  transform: translateX(var(--offset, 0));
+}
+.brief-board div + div { margin-top: -1px; }
+.brief-board div:nth-child(1) { --offset: -220px; }
+.brief-board div:nth-child(2) { --offset: -80px; }
+.brief-board div:nth-child(3) { --offset: 60px; }
+.brief-board h2 {
+  margin-top: 68px;
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1.1;
+}
+.brief-board p {
+  margin-top: 14px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.65;
+}
+.blueprint-article {
+  max-width: var(--col);
+  margin: 66px auto 0;
+}
+.blueprint-article p {
+  margin: 0 0 26px;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.85;
+}
+.blueprint-article .lead {
+  color: var(--ink);
+  font-size: clamp(22px, 2.7vw, 30px);
+  line-height: 1.48;
+  font-weight: 800;
+}
+.blueprint-article blockquote {
+  margin: 40px 0;
+  padding: 28px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: rgba(124,199,255,.08);
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.35;
+  font-weight: 800;
+  font-style: normal;
+}
+.blueprint-article figure {
+  margin: 44px 0 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+}
+.blueprint-article img {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  object-fit: cover;
+  mix-blend-mode: luminosity;
+}
+.art-footer {
+  background: #071d33;
+  border-color: var(--line);
+}
+.art-footer a { color: var(--accent); }
+
+@media (max-width: 860px) {
+  .blueprint-hero,
+  .brief-board { grid-template-columns: 1fr; }
+  .blueprint-copy { width: auto; }
+  .blueprint-visual {
+    position: static;
+    width: auto;
+    transform: none;
+    margin-top: 18px;
+  }
+  .brief-board div {
+    min-height: auto;
+    width: auto;
+    transform: none;
+  }
+  .brief-board h2 { margin-top: 34px; }
+  .blueprint-visual img { aspect-ratio: 16 / 10; }
+}
