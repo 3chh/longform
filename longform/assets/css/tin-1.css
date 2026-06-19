@@ -201,7 +201,11 @@ body.theme-amber {
 /* ── ARTICLE BODY ── */
 .warm-story { max-width: none; padding: 0; }
 .warm-story .prose {
-  max-width: 760px;
+  /* 760px cột chữ + 2×24px lề ngang (box-sizing: border-box) → trên mobile chữ
+     không dính 2 mép; trên desktop cột chữ vẫn ~760px. */
+  max-width: 808px;
+  padding-left: 24px;
+  padding-right: 24px;
   text-align: justify;
   text-justify: inter-word;
 }
