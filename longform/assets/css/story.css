@@ -575,3 +575,15 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
   .split-feature--rev > figure { order: 0; }
   .split-feature img { aspect-ratio: 16 / 10; height: auto; }
 }
+
+/* MOBILE — cỡ chữ theo vw: bề rộng & font cùng co theo màn hình nên các dòng
+   ngắt sẵn giữ đúng tỉ lệ, KHÔNG wrap lại lung tung giữa các máy. */
+@media (max-width: 640px) {
+  .theme-green .pullquote { padding: 30px 6vw; }
+  .theme-green .pullquote p { font-size: 4.6vw; line-height: 1.46; }
+  .theme-green .pullquote .mark { font-size: 5.2vw; }
+  .theme-green .pullquote cite { font-size: 2.9vw; letter-spacing: .1em; }
+
+  .theme-green .split-feature .sf-text .eyebrow { font-size: 3vw; letter-spacing: .1em; }
+  .theme-green .split-feature .sf-text p { font-size: 4.4vw; line-height: 1.46; }
+}
