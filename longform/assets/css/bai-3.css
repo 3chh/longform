@@ -872,6 +872,43 @@ body.heritage-story::before { display: none; }
   }
 }
 
+/* PROTOTYPE (mobile ≤640px): khối tương tác "Ký ức / Thực hành / Tương lai"
+   giữ nguyên bố cục so le của desktop và thu nhỏ CẢ CỤM (zoom set bằng JS)
+   thay vì reflow rời rạc. Desktop không bị ảnh hưởng. */
+@media (max-width: 640px) {
+  .fabric-path {
+    width: 600px;
+    max-width: none;
+    margin: 40px auto;
+    gap: 38px;
+  }
+  .fabric-path article { width: 460px; min-height: 150px; padding: 30px 44px; }
+  .fabric-path article:nth-child(2) { align-self: flex-end; }
+  .fabric-path article:nth-child(3) { margin-left: 104px; }
+  .fabric-path article::before { width: 190px; height: 24px; left: 28px; top: -12px; }
+  .fabric-path article > span { font-size: 58px; }
+  .fabric-path p { font-size: 17px; max-width: none; }
+
+  /* museum-spread: khoá bố cục desktop ở bề rộng thiết kế, scale cả cụm bằng JS */
+  .museum-spread {
+    width: 820px;
+    max-width: none;
+    margin: 60px auto;
+    grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+    gap: 24px;
+  }
+  .museum-spread figure { aspect-ratio: 16 / 9; }
+  .museum-spread img { min-height: 0; height: 100%; aspect-ratio: 16 / 9; }
+  .museum-spread figcaption { grid-column: 2; font-size: 13px; line-height: 1.45; }
+  .spread-title { padding: 44px 60px 44px 44px; }
+  .spread-title span { font-size: 12px; letter-spacing: .2em; }
+  .spread-title h2 { margin-top: 48px; }
+  .spread-title h2 .line-khi,
+  .spread-title h2 .line-tro-thanh { font-size: 24px; letter-spacing: .04em; }
+  .spread-title h2 .line-trang-phuc { font-size: 84px; margin-bottom: 40px; }
+  .spread-title h2 .line-tu-lieu { font-size: 48px; letter-spacing: .01em; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .fabric-path article,
   .reveal-block {
