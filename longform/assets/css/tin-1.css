@@ -223,35 +223,56 @@ body.theme-amber {
   width: min(1240px, calc(100vw - 48px));
   margin: clamp(66px, 10vw, 132px) auto;
   display: grid;
-  grid-template-columns: minmax(260px, 400px) minmax(0, 1fr);
+  grid-template-columns: minmax(200px, 280px) minmax(0, 1fr);
   gap: 16px;
   align-items: stretch;
 }
 .poster-copy {
-  padding: clamp(28px, 4vw, 48px);
+  padding: clamp(30px, 4vw, 52px) clamp(24px, 3vw, 40px);
   background:
     radial-gradient(circle at 82% 14%, rgba(243,201,107,.3), transparent 34%),
     var(--accent-red);
   color: #fffaf0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
-.poster-copy span {
+.poster-copy > span {
   font-size: 12px;
   font-weight: 900;
   letter-spacing: .18em;
   text-transform: uppercase;
   color: var(--accent-gold);
 }
+.poster-copy > span::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin: 14px auto 0;
+  background: var(--accent-gold);
+  border-radius: 2px;
+}
 .poster-copy h2 {
-  margin-top: 64px;
+  margin-top: 22px;
   font-family: var(--display);
-  font-size: clamp(32px, 4.4vw, 60px);
-  line-height: 1.04;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.1;
   letter-spacing: -.01em;
   font-weight: 800;
 }
+.poster-copy h2 em {
+  color: var(--accent-gold);
+  font-style: italic;
+}
+.poster-copy .pc-home {
+  width: clamp(46px, 5vw, 62px);
+  margin-bottom: 22px;
+  color: var(--accent-gold);
+}
+.poster-copy .pc-home svg { display: block; width: 100%; height: auto; }
 .poster-copy h2 .line,
 .image-words .line,
 .warm-story .pullquote .line {
@@ -314,26 +335,29 @@ body.theme-amber {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, transparent 38%, rgba(42,23,16,.82) 100%);
+  background: linear-gradient(148deg, rgba(42,23,16,.88) 0%, rgba(42,23,16,.44) 32%, transparent 56%);
 }
 .image-words {
   position: absolute;
   left: clamp(20px, 4vw, 44px);
-  right: clamp(20px, 4vw, 44px);
-  bottom: clamp(54px, 7vw, 92px);
+  top: clamp(22px, 4vw, 46px);
+  right: auto;
+  bottom: auto;
+  max-width: min(62%, 440px);
   z-index: 2;
   color: #fffaf0;
   font-family: var(--display);
-  font-size: clamp(30px, 4.6vw, 60px);
+  font-size: clamp(30px, 4.6vw, 56px);
   font-weight: 800;
   font-style: italic;
-  line-height: 1.05;
+  line-height: 1.08;
   letter-spacing: -.01em;
-  text-shadow: 0 12px 46px rgba(0,0,0,.6);
+  text-shadow: 0 8px 30px rgba(0,0,0,.55);
 }
 .warm-leader-poster .image-words {
-  bottom: clamp(24px, 4vw, 42px);
-  max-width: 84%;
+  top: clamp(22px, 4vw, 46px);
+  bottom: auto;
+  max-width: min(64%, 420px);
 }
 
 /* ── SUPPORT POSTER: con số lớn + ảnh ngang ── */
@@ -570,6 +594,26 @@ body.theme-amber {
 
 /* nới line-height cho đuôi tiêu đề hero */
 .homewarm-copy h1 .t-tail { line-height: 1.12; }
+
+/* Dải số liệu: số to, đơn vị nhỏ + nghiêng để con số bật lên */
+.warm-stats .stat b .unit {
+  font-size: .46em;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+/* Hero: vạch vàng làm điểm nhấn trước tiêu đề */
+.homewarm-copy h1 { margin-top: 20px; }
+.homewarm-copy h1::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin-bottom: 24px;
+  background: var(--accent-gold);
+  border-radius: 2px;
+}
 
 /* MOBILE — quote & chữ đè ảnh: cỡ chữ theo vw để khung và chữ cùng co,
    các dòng ngắt sẵn không wrap lại lung tung giữa các máy. */
