@@ -203,7 +203,7 @@ body.heritage-story::before { display: none; }
   color: rgba(255,248,234,.74);
   font-size: 12px;
   font-weight: 900;
-  letter-spacing: .22em;
+  letter-spacing: .16em;
   line-height: 1.5;
   text-transform: uppercase;
 }
@@ -520,7 +520,7 @@ body.heritage-story::before { display: none; }
   letter-spacing: -.025em;
   text-transform: none;
   white-space: nowrap;
-  margin-bottom: clamp(30px, 3vw, 48px);
+  margin-bottom: clamp(14px, 2vw, 26px);
 }
 .spread-title h2 .line-tro-thanh {
   color: rgba(255,248,234,.72);
@@ -812,8 +812,8 @@ body.heritage-story::before { display: none; }
   }
   .museum-spread figcaption {
     grid-column: 2;
-    font-size: 9px;
-    line-height: 1.45;
+    font-size: 12px;
+    line-height: 1.5;
   }
   .youth-feature {
     width: calc(100vw - 24px);
@@ -844,8 +844,8 @@ body.heritage-story::before { display: none; }
     grid-row: 1;
     padding: 14px;
     border-radius: 22px 8px 22px 8px;
-    font-size: 10px;
-    line-height: 1.55;
+    font-size: 14px;
+    line-height: 1.6;
   }
   .youth-feature figcaption span {
     margin-bottom: 10px;
@@ -857,8 +857,8 @@ body.heritage-story::before { display: none; }
     border-radius: 8px 26px 8px 26px;
   }
   .research-panel span {
-    font-size: 8px;
-    letter-spacing: .12em;
+    font-size: 11px;
+    letter-spacing: .14em;
   }
   .research-panel h2 {
     margin-top: 12px;
@@ -867,8 +867,8 @@ body.heritage-story::before { display: none; }
   }
   .research-panel p {
     margin-top: 12px;
-    font-size: 10px;
-    line-height: 1.55;
+    font-size: 15px;
+    line-height: 1.7;
   }
 }
 
@@ -907,6 +907,31 @@ body.heritage-story::before { display: none; }
   .spread-title h2 .line-tro-thanh { font-size: 24px; letter-spacing: .04em; }
   .spread-title h2 .line-trang-phuc { font-size: 84px; margin-bottom: 40px; }
   .spread-title h2 .line-tu-lieu { font-size: 48px; letter-spacing: .01em; }
+}
+
+/* Phone ≤560px: bỏ bố cục 2 cột chật của youth/research để chữ về bề rộng đọc được;
+   tắt justify cho thân bài (tránh "sông trắng" trên màn hẹp). */
+@media (max-width: 560px) {
+  .youth-feature,
+  .research-panel {
+    grid-template-columns: 1fr;
+  }
+  .youth-feature img,
+  .youth-feature figcaption,
+  .research-panel figure,
+  .research-panel div {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .youth-feature img,
+  .research-panel img {
+    aspect-ratio: 4 / 3;
+  }
+  .memory-opening p:not(.lead),
+  .heritage-copy p,
+  .research-panel p {
+    text-align: left;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

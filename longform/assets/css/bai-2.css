@@ -83,7 +83,7 @@ body.theme-red {
   color: rgba(247,255,233,.7);
   font-size: 12px;
   font-weight: 900;
-  letter-spacing: .22em;
+  letter-spacing: .16em;
   text-transform: uppercase;
 }
 .hero-rubric span {
@@ -113,7 +113,7 @@ body.theme-red {
   line-height: .98;
 }
 .muong-title h1 span.t-sub {
-  color: var(--accent);
+  color: #f7ffe9;
   white-space: nowrap;
   font-size: clamp(38px, 6.4vw, 90px);
   line-height: 1;
@@ -155,7 +155,7 @@ body.theme-red {
   margin: -.04em 0 .02em -.02em;
 }
 .muong-title h1 span:nth-child(3) {
-  color: var(--accent);
+  color: #f7ffe9;
 }
 .muong-title .dek {
   max-width: 690px;
@@ -758,8 +758,8 @@ body.theme-red {
   }
   .muong-emag .media figcaption {
     padding: 12px;
-    font-size: 10px;
-    line-height: 1.45;
+    font-size: 12px;
+    line-height: 1.5;
   }
   .muong-emag .media-2 {
     grid-template-columns: 1.4fr 1fr;
@@ -779,8 +779,8 @@ body.theme-red {
     aspect-ratio: 4 / 3;
   }
   .muong-emag .media-2 figcaption {
-    font-size: 10px;
-    line-height: 1.45;
+    font-size: 12px;
+    line-height: 1.5;
     padding-top: 8px;
   }
 }
@@ -794,6 +794,17 @@ body.theme-red {
   .muong-title .dek .line::after,
   .muong-toc .toc-d .line::after {
     content: " ";
+  }
+  /* Xếp dọc cụm ảnh để ảnh tư liệu (poster/ảnh chụp MXH) đủ to trên phone. */
+  .muong-emag .media,
+  .muong-emag .media-2 {
+    grid-template-columns: 1fr;
+  }
+  /* tắt justify thân bài trên màn hẹp */
+  .muong-emag .prose,
+  .muong-emag .prose p,
+  .qa-a .a {
+    text-align: left;
   }
 }
 

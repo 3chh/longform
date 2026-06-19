@@ -339,6 +339,7 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
   .hero .kicker { margin-bottom: 14px; }
   .hero .dek { margin-top: 16px; font-size: 15px; }
   .hero .scrollcue { margin-top: 20px; }
+  .prose { text-align: left; }
   .media,
   .media-2,
   .media-3,

@@ -453,8 +453,8 @@ body.theme-amber {
     padding: 16px 14px;
   }
   .poster-copy span {
-    font-size: 8px;
-    line-height: 1.2;
+    font-size: 11px;
+    line-height: 1.3;
     letter-spacing: .12em;
   }
   .poster-copy h2 {
@@ -476,7 +476,7 @@ body.theme-amber {
     font-size: clamp(20px, 5.6vw, 26px);
   }
   .support-poster .pn-row span {
-    font-size: 8px;
+    font-size: 11px;
     letter-spacing: .04em;
   }
   .support-poster figcaption {
@@ -533,6 +533,14 @@ body.theme-amber {
     max-width: none;
     grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
     gap: 16px;
+  }
+}
+
+/* Phone ≤560px: tắt justify thân bài để tránh giãn chữ trên màn hẹp. */
+@media (max-width: 560px) {
+  .warm-story .prose,
+  .warm-story .prose p {
+    text-align: left;
   }
 }
 

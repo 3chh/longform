@@ -420,7 +420,7 @@ body.theme-navy {
   color: var(--accent);
   font-size: 12px;
   font-weight: 900;
-  letter-spacing: .24em;
+  letter-spacing: .16em;
   text-transform: uppercase;
 }
 .chapter-copy h2 {
@@ -486,8 +486,7 @@ body.theme-navy {
   font-style: italic;
   line-height: 1.28;
   letter-spacing: 0;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
 }
 
 .press-final {
@@ -606,13 +605,13 @@ body.theme-navy {
   }
   .press-cover figcaption,
   .press-final figcaption {
-    padding: 12px;
-    font-size: 10px;
-    line-height: 1.45;
+    padding: 14px;
+    font-size: 12px;
+    line-height: 1.5;
   }
   .archive-spread figcaption {
-    font-size: 10px;
-    line-height: 1.45;
+    font-size: 12px;
+    line-height: 1.5;
     padding-top: 8px;
   }
   .archive-chapter--right .chapter-number,
@@ -638,6 +637,26 @@ body.theme-navy {
   }
   .press-hero .dek .line::after {
     content: " ";
+  }
+  /* Xếp dọc cụm ảnh đôi để ảnh tư liệu đủ to, không bị ép thành cột tí hon. */
+  .press-cover,
+  .press-final,
+  .archive-spread {
+    grid-template-columns: 1fr;
+  }
+  .press-final img,
+  .press-final figcaption {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .archive-spread img:last-of-type {
+    object-position: center;
+  }
+  /* tắt justify thân bài + quote trên màn hẹp */
+  .press-body p,
+  .press-lede p,
+  .press-opening p:not(.lead) {
+    text-align: left;
   }
 }
 
