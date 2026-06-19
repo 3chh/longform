@@ -451,13 +451,32 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
 .theme-green .section h2 { line-height: 1.18; }
 
 @media (max-width: 760px) {
+  /* căn đáy chắc chắn (tránh quirk svh + grid trên iOS) */
   .hero-feature-grid {
-    grid-template-columns: 1fr; align-items: end;
-    min-height: 92svh; padding: 0 24px 44px;
+    display: flex; flex-direction: column;
+    justify-content: flex-end; align-items: stretch;
+    min-height: 100svh; padding: 88px 24px 54px;
   }
+  .hero-feature-grid .hero-text { max-width: none; }
   .hero-portrait { display: none; }
-  .hero--feature .hero-img { filter: saturate(.96) brightness(.62); transform: none; }
-  .hero--feature h1 { font-size: clamp(30px, 8.4vw, 40px); max-width: 18ch; }
+  .hero--feature .hero-img {
+    filter: saturate(.96) brightness(.58);
+    transform: none; object-position: center 16%;
+  }
+  /* nền tối hơn ở dải dưới để chữ tách khỏi vùng mặt nhân vật */
+  .hero--feature::after {
+    background: linear-gradient(180deg, rgba(8,12,6,.3) 0%, rgba(8,12,6,.1) 28%, rgba(8,12,6,.5) 62%, rgba(8,12,6,.9) 100%);
+  }
+  .hero--feature h1 { font-size: clamp(28px, 8vw, 38px); max-width: 20ch; }
+
+  /* iOS Safari fix: media-split hay vỡ vì col-right dùng 1fr-rows + height:100%.
+     Xếp dọc, ảnh dùng aspect-ratio cố định, bỏ height:100%. */
+  .theme-green .media-split { grid-template-columns: 1fr; }
+  .theme-green .media-split .tall { aspect-ratio: 4 / 3; }
+  .theme-green .media-split .col-right {
+    grid-template-columns: 1fr 1fr; grid-template-rows: auto; gap: 8px;
+  }
+  .theme-green .media-split .col-right img { aspect-ratio: 4 / 3; height: auto; }
 }
 
 /* ── Ô "Điểm chạm" (insight-card) — callout có bản sắc ── */
@@ -554,5 +573,5 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
   .split-feature,
   .split-feature--rev { grid-template-columns: 1fr; gap: 18px; }
   .split-feature--rev > figure { order: 0; }
-  .split-feature img { aspect-ratio: 16 / 10; }
+  .split-feature img { aspect-ratio: 16 / 10; height: auto; }
 }
