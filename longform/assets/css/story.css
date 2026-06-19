@@ -390,3 +390,169 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
     transform: none;
   }
 }
+
+/* ============================================================
+   BÀI 1 — "Học cùng AI" (chỉ theme-green dùng): nâng cấp bìa,
+   ô "Điểm chạm", và thêm nhịp layout ảnh·text 2 bên.
+   ============================================================ */
+:root { --hero-accent: #e7c873; }
+
+/* ── HERO "tạp chí": nền ảnh phủ mờ + chân dung đóng khung ── */
+.hero--feature .hero-img {
+  filter: blur(22px) saturate(.92) brightness(.5);
+  transform: scale(1.1);
+}
+.hero--feature::after {
+  background: linear-gradient(180deg, rgba(8,12,6,.5) 0%, rgba(8,12,6,.3) 44%, rgba(8,12,6,.74) 100%);
+}
+.hero-feature-grid {
+  position: relative; z-index: 2;
+  width: 100%; max-width: var(--wide); margin: 0 auto;
+  min-height: 100svh; padding: 104px 24px 64px;
+  display: grid; grid-template-columns: 1.08fr .92fr;
+  gap: clamp(28px, 5vw, 76px); align-items: center;
+}
+.hero-feature-grid .hero-text { max-width: 620px; }
+.hero--feature h1 {
+  font-size: clamp(40px, 5.6vw, 76px);
+  line-height: 1.12;
+  max-width: 14ch;
+}
+.hero--feature h1 .accent {
+  font-style: italic;
+  color: var(--hero-accent);
+}
+.hero-portrait {
+  position: relative; margin: 0;
+  padding: 12px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.24);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 30px 70px rgba(0,0,0,.4);
+}
+.hero-portrait img {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 22%;
+  display: block;
+}
+.hero-portrait figcaption {
+  margin-top: 10px; color: rgba(255,255,255,.78);
+  font-size: 12.5px; line-height: 1.5; font-style: italic;
+}
+.hero-portrait figcaption .name {
+  display: block;
+  margin-bottom: 2px;
+  color: #fff;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+
+/* giãn dòng tiêu đề mục cho bài 1 */
+.theme-green .section h2 { line-height: 1.18; }
+
+@media (max-width: 760px) {
+  .hero-feature-grid {
+    grid-template-columns: 1fr; align-items: end;
+    min-height: 92svh; padding: 0 24px 44px;
+  }
+  .hero-portrait { display: none; }
+  .hero--feature .hero-img { filter: saturate(.96) brightness(.62); transform: none; }
+  .hero--feature h1 { font-size: clamp(30px, 8.4vw, 40px); max-width: 18ch; }
+}
+
+/* ── Ô "Điểm chạm" (insight-card) — callout có bản sắc ── */
+.insight-card {
+  position: relative;
+  max-width: 900px;
+  margin: 48px auto 60px;
+  padding: clamp(30px, 4.5vw, 52px) clamp(28px, 5vw, 56px);
+  background:
+    radial-gradient(135% 120% at 100% 0%, rgba(63,107,58,.13), transparent 46%),
+    var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 24px 56px rgba(20,18,12,.10);
+  overflow: hidden;
+}
+/* sợi gradient đơn, vuốt thoi mờ ở cả hai đầu */
+.insight-card::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: clamp(24px, 4vw, 44px);
+  bottom: clamp(24px, 4vw, 44px);
+  width: 6px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-dk) 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 15%, #000 85%, transparent 100%);
+          mask-image: linear-gradient(180deg, transparent 0, #000 15%, #000 85%, transparent 100%);
+}
+/* gợn sóng "chạm" lớn, mờ, ở góc phải */
+.insight-card::after {
+  content: "";
+  position: absolute; top: -96px; right: -96px;
+  width: 280px; height: 280px; border-radius: 50%;
+  background:
+    radial-gradient(circle,
+      transparent 0 31%,
+      rgba(63,107,58,.10) 31% 33%, transparent 33% 48%,
+      rgba(63,107,58,.08) 48% 50%, transparent 50% 66%,
+      rgba(63,107,58,.06) 66% 68%, transparent 68%);
+  pointer-events: none;
+}
+.insight-card .ic-label {
+  position: relative;
+  display: flex; align-items: center; gap: 13px;
+  margin-bottom: 20px;
+  color: var(--accent-dk);
+  font-size: 12px; font-weight: 900; letter-spacing: .2em; text-transform: uppercase;
+}
+.insight-card .ic-ripple { flex: none; width: 30px; height: 30px; color: var(--accent); }
+.insight-card .ic-ripple svg { display: block; width: 100%; height: 100%; }
+.insight-card .ic-label::after {
+  content: ""; flex: 1; height: 1px;
+  background: linear-gradient(90deg, var(--line) 0%, transparent 100%);
+}
+.insight-card p {
+  position: relative; margin: 0; color: var(--ink);
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(22px, 3vw, 32px); line-height: 1.36;
+}
+.insight-card p::first-letter { color: var(--accent-dk); }
+
+/* ── SPLIT FEATURE: ảnh 1 bên · text 1 bên ── */
+.split-feature {
+  width: 100%; max-width: var(--wide); margin: clamp(56px, 8vw, 92px) auto;
+  display: grid; grid-template-columns: 1.05fr .95fr;
+  gap: clamp(28px, 4vw, 56px); align-items: center;
+  padding: clamp(20px, 3vw, 40px);
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background:
+    linear-gradient(var(--paper), var(--paper)) padding-box,
+    linear-gradient(135deg, rgba(63,107,58,.55), rgba(63,107,58,.06) 52%, rgba(63,107,58,.34)) border-box;
+  box-shadow: 0 26px 60px rgba(20,18,12,.08);
+}
+.split-feature > figure { margin: 0; }
+.split-feature img {
+  width: 100%; height: 100%; object-fit: cover;
+  aspect-ratio: 4 / 3; border-radius: 12px;
+}
+.split-feature .sf-text .eyebrow {
+  display: block; margin-bottom: 14px;
+  color: var(--accent); font-size: 13px; font-weight: 800;
+  letter-spacing: .18em; text-transform: uppercase;
+}
+.split-feature .sf-text p {
+  margin: 0; color: var(--ink);
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(20px, 2.4vw, 28px); line-height: 1.4;
+}
+.split-feature--rev > figure { order: -1; }
+
+@media (max-width: 760px) {
+  .split-feature,
+  .split-feature--rev { grid-template-columns: 1fr; gap: 18px; }
+  .split-feature--rev > figure { order: 0; }
+  .split-feature img { aspect-ratio: 16 / 10; }
+}

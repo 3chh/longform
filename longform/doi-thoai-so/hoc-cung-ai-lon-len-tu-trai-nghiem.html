@@ -51,14 +51,20 @@
   </div>
 
   <!-- HERO -->
-  <header class="hero">
-    <img class="hero-img" src="../assets/img/bai-1/hero.jpg" alt="Chân dung anh Nguyễn Bá Tùng giữa thiên nhiên">
-    <div class="hero-inner">
-      <span class="kicker">Phỏng vấn · Giáo dục</span>
-      <h1><span class="line">Học cùng AI,</span><span class="line">lớn lên từ trải nghiệm</span></h1>
-      <p class="dek"><span class="line">Đằng sau một mùa hè kín lịch học</span><span class="line">và những chiếc màn hình sáng đèn</span><span class="line">là câu chuyện về những trải nghiệm</span><span class="line">đang dần vắng bóng trong tuổi thơ.</span></p>
-      <div class="meta">Yến Ngọc - Bảo Ngọc · 10/06/2026 · 8 phút đọc</div>
-      <span class="scrollcue">Cuộn để đọc</span>
+  <header class="hero hero--feature">
+    <img class="hero-img" src="../assets/img/bai-1/hero.jpg" alt="" aria-hidden="true">
+    <div class="hero-feature-grid">
+      <div class="hero-text">
+        <span class="kicker">Phỏng vấn · Giáo dục</span>
+        <h1><span class="line">Học cùng AI,</span><span class="line">lớn lên từ <em class="accent">trải nghiệm</em></span></h1>
+        <p class="dek"><span class="line">Đằng sau một mùa hè kín lịch học</span><span class="line">và những chiếc màn hình sáng đèn</span><span class="line">là câu chuyện về những trải nghiệm</span><span class="line">đang dần vắng bóng trong tuổi thơ.</span></p>
+        <div class="meta">Yến Ngọc - Bảo Ngọc · 10/06/2026 · 8 phút đọc</div>
+        <span class="scrollcue">Cuộn để đọc</span>
+      </div>
+      <figure class="hero-portrait">
+        <img src="../assets/img/bai-1/hero.jpg" alt="Chân dung anh Nguyễn Bá Tùng giữa thiên nhiên">
+        <figcaption><span class="name">Anh Nguyễn Bá Tùng</span>Giám đốc Đào tạo, Giảng viên Thuận Thiên Naturalis.</figcaption>
+      </figure>
     </div>
   </header>
 
@@ -73,7 +79,7 @@
 
     <!-- SECTION 1 -->
     <div class="section" id="mua-he">
-      <h2><span class="line">Mùa hè có đang</span><span class="line">bị “đánh cắp”?</span></h2>
+      <h2><span class="line">Mùa hè có đang</span><span class="line">bị “đánh cắp” ?</span></h2>
       <div class="rule"></div>
     </div>
 
@@ -88,7 +94,12 @@
     </div>
 
     <aside class="insight-card">
-      <span>Điểm đọc nhanh</span>
+      <div class="ic-label">
+        <span class="ic-ripple" aria-hidden="true">
+          <svg viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="3.2" fill="currentColor"/><circle cx="15" cy="15" r="8" stroke="currentColor" stroke-width="1.6" opacity=".55"/><circle cx="15" cy="15" r="13" stroke="currentColor" stroke-width="1.6" opacity=".28"/></svg>
+        </span>
+        Điểm chạm
+      </div>
       <p>Mùa hè không chỉ là khoảng trống để lấp đầy bằng lịch học. Đó còn là quãng thời gian trẻ được va chạm với đời sống, học cách hợp tác và tự nhận ra mình qua trải nghiệm.</p>
     </aside>
 
@@ -134,7 +145,7 @@
     </div>
 
     <div class="pullquote">
-      <p><span class="mark">“</span><span class="line">Học qua lý thuyết giúp chúng ta biết nhiều hơn,</span><span class="line">còn học qua trải nghiệm giúp chúng ta <span class="nowrap">hiểu sâu hơn.</span></span><span class="mark">”</span></p>
+      <p><span class="mark">“</span><span class="line">Học qua lý thuyết</span><span class="line">giúp chúng ta biết nhiều hơn,</span><span class="line">còn học qua trải nghiệm</span><span class="line">giúp chúng ta hiểu sâu hơn.</span><span class="mark">”</span></p>
       <cite>Nguyễn Bá Tùng</cite>
     </div>
 
@@ -166,11 +177,16 @@
       </div>
     </div>
 
-    <!-- Ảnh 5 -->
-    <figure class="media">
-      <img src="../assets/img/bai-1/g5.jpg" alt="Anh Nguyễn Bá Tùng dẫn nhóm trẻ băng qua lối đi trong rừng">
-      <figcaption>Vai trò của người thầy ngày nay không chỉ dừng ở việc truyền đạt kiến thức, mà còn là người thiết kế môi trường và trải nghiệm học tập để học sinh chủ động khám phá.</figcaption>
-    </figure>
+    <!-- Feature: text trái · ảnh phải -->
+    <section class="split-feature">
+      <div class="sf-text">
+        <span class="eyebrow">Người thầy thời chuyển đổi số</span>
+        <p>Vai trò của người thầy hôm nay không chỉ là truyền đạt kiến thức, mà còn là người thiết kế môi trường và trải nghiệm để học sinh chủ động khám phá.</p>
+      </div>
+      <figure>
+        <img src="../assets/img/bai-1/g5.jpg" alt="Anh Nguyễn Bá Tùng dẫn nhóm trẻ băng qua lối đi trong rừng">
+      </figure>
+    </section>
 
     <!-- SECTION 3 -->
     <div class="section" id="cay-cau">
@@ -191,10 +207,16 @@
       </div>
     </div>
 
-    <figure class="media">
-      <img class="calm-illustration" src="../assets/img/bai-1/tech.jpg" alt="Minh hoạ công nghệ kết nối trò chơi, bản đồ số với các hoạt động trải nghiệm ngoài thực tế">
-      <figcaption>Khi công nghệ không còn là bức tường ngăn cách mà trở thành cây cầu kết nối những trải nghiệm thực tế.</figcaption>
-    </figure>
+    <!-- Feature đảo: ảnh trái · text phải -->
+    <section class="split-feature split-feature--rev">
+      <div class="sf-text">
+        <span class="eyebrow">Công nghệ làm cây cầu</span>
+        <p>Khi công nghệ không còn là bức tường ngăn cách mà trở thành cây cầu kết nối những trải nghiệm thực tế.</p>
+      </div>
+      <figure>
+        <img class="calm-illustration" src="../assets/img/bai-1/tech.jpg" alt="Minh hoạ công nghệ kết nối trò chơi, bản đồ số với các hoạt động trải nghiệm ngoài thực tế">
+      </figure>
+    </section>
 
     <div class="prose">
       <div class="qa">
@@ -204,7 +226,7 @@
     </div>
 
     <div class="pullquote">
-      <p><span class="mark">“</span><span class="line">Công nghệ có thể mở ra cánh cửa đến với tri thức,</span><span class="line">nhưng thiên nhiên mới là nơi giúp những <span class="nowrap">bài học ấy</span></span><span class="line">trở thành trải nghiệm, thành cảm xúc</span><span class="line">và dần hình thành nhân cách.</span><span class="mark">”</span></p>
+      <p><span class="mark">“</span><span class="line">Công nghệ có thể mở ra</span><span class="line">cánh cửa đến với tri thức,</span><span class="line">nhưng thiên nhiên mới là</span><span class="line">nơi giúp những bài học ấy</span><span class="line">trở thành trải nghiệm,</span><span class="line">thành cảm xúc</span><span class="line">và dần hình thành nhân cách.</span><span class="mark">”</span></p>
     </div>
 
     <div class="prose">
@@ -254,7 +276,7 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
 
     // Scroll reveal — lướt tới đâu nội dung hiện tới đó
-    var revealItems = document.querySelectorAll('.story > .prose, .story > .story-map, .story > .section, .story > .insight-card, .story > figure, .story > .pullquote, .story > .byline');
+    var revealItems = document.querySelectorAll('.story > .prose, .story > .story-map, .story > .section, .story > .insight-card, .story > figure, .story > .split-feature, .story > .pullquote, .story > .byline');
     revealItems.forEach(function (item) { item.classList.add('reveal-block'); });
 
     if ('IntersectionObserver' in window) {
