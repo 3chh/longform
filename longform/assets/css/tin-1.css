@@ -548,3 +548,35 @@ body.theme-amber {
   .warm-stats .stat,
   .warm-stats .stat::before { transition: none; }
 }
+
+/* ============================================================
+   REFACTOR bài "Mái ấm gia đình Việt" (theme-amber)
+   — ngôn ngữ riêng, không lặp thiết kế bài 1.
+   ============================================================ */
+
+/* Pullquote: bỏ cặp dấu nháy khổng lồ, thay bằng motif "mái nhà" (mái ấm) */
+.warm-story .pullquote::before,
+.warm-story .pullquote::after { content: none; }
+.warm-story .pullquote .roof {
+  display: block;
+  width: clamp(52px, 7vw, 78px);
+  margin: 0 auto clamp(20px, 3vw, 34px);
+  color: var(--accent-gold);
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,.22));
+}
+.warm-story .pullquote .roof svg { display: block; width: 100%; height: auto; }
+
+/* nới line-height cho đuôi tiêu đề hero */
+.homewarm-copy h1 .t-tail { line-height: 1.12; }
+
+/* MOBILE — quote & chữ đè ảnh: cỡ chữ theo vw để khung và chữ cùng co,
+   các dòng ngắt sẵn không wrap lại lung tung giữa các máy. */
+@media (max-width: 640px) {
+  .warm-story .pullquote { padding: 13vw 7vw; }
+  .warm-story .pullquote p { font-size: 4.4vw; line-height: 1.42; }
+  .warm-story .pullquote .roof { width: 13vw; margin-bottom: 5vw; }
+  .image-words { font-size: 5.6vw; }
+  .warm-leader-poster .image-words { font-size: 5.2vw; }
+}
