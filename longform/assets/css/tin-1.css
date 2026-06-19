@@ -170,6 +170,9 @@ body.theme-amber {
   font-size: 13px;
   font-weight: 700;
 }
+.homewarm-copy .hero-cta-row .meta {
+  margin-top: 0;
+}
 
 /* ── DẢI SỐ LIỆU ── */
 .warm-stats {

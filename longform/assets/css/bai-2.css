@@ -60,7 +60,7 @@ body.theme-red {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
   gap: clamp(24px, 5vw, 72px);
-  align-items: end;
+  align-items: center;
   padding: 104px 0 58px;
 }
 .muong-title {
@@ -110,7 +110,7 @@ body.theme-red {
 }
 .muong-title h1 span.t-top {
   font-size: clamp(40px, 6.6vw, 92px);
-  line-height: .98;
+  line-height: 1.16;
 }
 .muong-title h1 span.t-sub {
   color: #f7ffe9;
@@ -118,23 +118,46 @@ body.theme-red {
   font-size: clamp(38px, 6.4vw, 90px);
   line-height: 1;
   letter-spacing: -.005em;
-  margin-top: .06em;
+  margin-top: .16em;
+}
+/* Dòng phụ của tít gốc: "và" giữ nguyên kiểu connector, phần mô tả xuống dòng */
+.muong-title h1 span.t-rest {
+  display: block;
+  margin-top: .24em;
 }
 .muong-title h1 .t-and {
-  display: inline;
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(16px, 1.8vw, 24px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #f7ffe9;
+}
+.muong-title h1 .t-desc {
+  display: block;
+  margin-top: .12em;
+  font-family: "Be Vietnam Pro", system-ui, sans-serif;
+  font-size: clamp(18px, 4.6vw, 40px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.22;
+  letter-spacing: -.005em;
   text-transform: none;
-  font-size: .4em;
-  font-weight: 600;
-  letter-spacing: .02em;
-  color: rgba(247,255,233,.62);
-  margin-left: .5em;
-  margin-right: .15em;
+  color: #aeb8b0;
+}
+/* mô tả cố định đúng 2 dòng, ngắt theo cụm nghĩa, không reflow */
+.muong-title h1 .t-desc .dl {
+  display: block;
+  white-space: nowrap;
 }
 .muong-title h1 .nowrap {
   display: inline;
 }
 .muong-title h1 .t-script-inline {
-  display: inline;
+  display: block;
+  margin-left: .50em;
   color: var(--accent-2);
   font-family: "Dancing Script", cursive;
   font-size: 1.34em;
@@ -142,6 +165,7 @@ body.theme-red {
   text-transform: none;
   white-space: nowrap;
   letter-spacing: 0;
+  line-height: 1.05;
 }
 .muong-title h1 span.t-script {
   color: var(--accent-2);
@@ -181,11 +205,15 @@ body.theme-red {
   border: 1px solid rgba(247,255,233,.24);
   backdrop-filter: blur(8px);
 }
-.muong-portrait img {
+/* Ảnh gốc là hình vuông → dùng background để zoom & căn nhân vật vào giữa khung 4/5
+   (object-fit:cover với ảnh vuông trong khung cao chỉ cắt 2 bên, không cắt trên-dưới). */
+.muong-portrait .mp-photo {
   width: 100%;
   aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 22%;
+  background-image: url("../img/bai-2/hero.jpg");
+  background-size: 150%;
+  background-position: 47% 20%;
+  background-repeat: no-repeat;
 }
 .muong-portrait figcaption {
   margin-top: 10px;
@@ -270,12 +298,16 @@ body.theme-red {
 }
 .muong-emag .lead {
   color: var(--ink);
-  font-size: clamp(26px, 4.2vw, 56px);
-  line-height: 1.12;
-  letter-spacing: -.035em;
-  font-weight: 900;
-  text-align: left;
+  font-size: clamp(20px, 2.5vw, 30px);
+  line-height: 1.5;
+  letter-spacing: -.005em;
+  font-weight: 400;
+  text-align: justify;
+  text-justify: inter-word;
 }
+/* Be Vietnam Pro chỉ có italic ở 400 → giữ 400 cho italic thật, không faux-bold */
+.muong-emag .lead em,
+.muong-emag .lead strong { font-weight: 400; }
 .muong-emag .lead::first-letter {
   float: none;
   font-family: inherit;
@@ -293,7 +325,8 @@ body.theme-red {
   color: var(--text);
   font-style: normal;
   font-weight: 600;
-  text-align: left;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* MỤC LỤC dạng list — bấm để cuộn tới từng phần */
@@ -516,15 +549,15 @@ body.theme-red {
   text-align: left;
 }
 .qa-aside { margin: 24px 0 0; }
+/* Ảnh tư liệu (ảnh chụp MXH · infographic · ảnh chụp hiện trường) hiển thị
+   trọn vẹn theo tỉ lệ gốc, không cắt cover làm mất nội dung. */
 .qa-aside img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
   display: block;
-}
-/* Screenshot trang MXH: giữ trọn header (avatar + tên + lượt theo dõi) ở trên */
-.qa-aside img[src*="profile"] {
-  object-position: center top;
+  background: var(--paper);
 }
 .qa-aside figcaption {
   margin-top: 10px; color: var(--muted); font-size: 12.5px; line-height: 1.5;
@@ -605,30 +638,14 @@ body.theme-red {
   width: 100vw;
   max-width: none;
   margin: clamp(70px, 10vw, 140px) calc(50% - 50vw);
-  padding: clamp(72px, 10vw, 130px) max(36px, calc((100vw - 1040px) / 2)) clamp(56px, 8vw, 104px);
+  padding: clamp(56px, 8vw, 104px) max(36px, calc((100vw - 1040px) / 2));
   border-radius: 0;
   background: var(--ink);
   overflow: hidden;
   transition: background .35s ease;
 }
-.muong-emag .pullquote::before {
-  content: "“";
-  position: absolute;
-  left: max(20px, calc((100vw - 1040px) / 2));
-  top: -.06em;
-  font-family: var(--serif);
-  font-size: clamp(150px, 22vw, 320px);
-  line-height: 1;
-  color: var(--accent-2);
-  opacity: .92;
-  transition: transform .45s ease, opacity .45s ease;
-}
 .muong-emag .pullquote:hover {
   background: #041812;
-}
-.muong-emag .pullquote:hover::before {
-  opacity: 1;
-  transform: translateY(10px) rotate(-4deg);
 }
 .muong-emag .pullquote p {
   position: relative;
@@ -670,7 +687,6 @@ body.theme-red {
   }
   .qa-q { position: static; }
   .qa-aside { max-width: 420px; }
-  .qa-aside img { aspect-ratio: 16 / 10; }
   .muong-hero-grid {
     width: calc(100vw - 36px);
     padding-top: 86px;
@@ -793,8 +809,8 @@ body.theme-red {
   .muong-title .dek { margin-top: 12px; font-size: 15px; line-height: 1.5; }
   .muong-title .meta { margin-top: 14px; }
   .muong-portrait {
-    max-width: 200px;
-    margin: 0;
+    max-width: min(300px, 78%);
+    margin: 6px 0 0;
   }
   .muong-portrait figcaption { font-size: 11px; }
 }

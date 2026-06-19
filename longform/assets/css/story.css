@@ -575,3 +575,63 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
   .theme-green .split-feature .sf-text .eyebrow { font-size: 3vw; letter-spacing: .1em; }
   .theme-green .split-feature .sf-text p { font-size: 4.4vw; line-height: 1.46; }
 }
+
+/* ============================================================
+   NÚT "Xem chi tiết" trên bìa — pill nhỏ, hover trượt nền ngang
+   Dùng chung cho các bài (đặt cạnh phần tác giả ở hero).
+   ============================================================ */
+.hero-cta-row {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+}
+.hero-cta-row .meta { margin-top: 0; }
+.detail-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  border: 1.5px solid rgba(255,255,255,.55);
+  border-radius: 999px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color .35s ease, border-color .35s ease;
+}
+.detail-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #fff;
+  transform: translateX(-101%);
+  transition: transform .42s cubic-bezier(.4,0,.2,1);
+}
+.detail-btn svg {
+  flex: none;
+  transition: transform .42s cubic-bezier(.4,0,.2,1);
+}
+.detail-btn:hover,
+.detail-btn:focus-visible {
+  color: #16140f;
+  border-color: #fff;
+}
+.detail-btn:hover::before,
+.detail-btn:focus-visible::before { transform: translateX(0); }
+.detail-btn:hover svg,
+.detail-btn:focus-visible svg { transform: translateX(5px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-btn,
+  .detail-btn::before,
+  .detail-btn svg { transition: none; }
+}
