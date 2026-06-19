@@ -351,7 +351,6 @@ body.emag4 {
   line-height: 1.72;
   font-style: italic;
   text-shadow: 0 1px 8px rgba(0,0,0,.55);
-  white-space: nowrap;
 }
 
 .poster-caption.light {
@@ -806,14 +805,29 @@ body.emag4 {
     min-height: 72svh;
   }
 
+  .poster-caption {
+    width: calc(100% - 32px);
+    padding: clamp(40px, 7vw, 72px) 0;
+  }
+
   .poster-caption h2 span:first-child {
-    font-size: clamp(35px, 10vw, 48px);
-    line-height: 1.06;
+    font-size: clamp(28px, 7.8vw, 42px);
+    line-height: 1.08;
+    white-space: normal;
+    word-break: break-word;
   }
 
   .poster-caption h2 span:last-child {
-    font-size: clamp(31px, 8.8vw, 43px);
-    line-height: 1.16;
+    font-size: clamp(26px, 7.2vw, 38px);
+    line-height: 1.18;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .poster-caption p {
+    font-size: 14px;
+    line-height: 1.62;
+    margin-top: 16px;
     white-space: normal;
   }
 
