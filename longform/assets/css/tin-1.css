@@ -502,6 +502,40 @@ body.theme-amber {
   }
 }
 
+/* Mobile ≤640px: khoá các khối thị giác (warm-stats/love-poster/support-poster)
+   theo bố cục desktop, scale CẢ CỤM bằng artboard.js. Đặt sau cùng để đè reflow. */
+@media (max-width: 640px) {
+  .warm-stats {
+    width: 920px;
+    max-width: none;
+    margin: -62px auto 0;
+    grid-template-columns: 1.15fr .92fr 1.1fr;
+  }
+  .warm-stats .stat {
+    min-height: 168px;
+    border-right: 1px solid rgba(42,23,16,.14);
+    border-bottom: 0;
+    padding: 30px 22px;
+  }
+  .warm-stats .stat:last-child { border-right: 0; }
+
+  .love-poster {
+    width: 920px;
+    max-width: none;
+    margin: 80px auto;
+    grid-template-columns: minmax(260px, 400px) minmax(0, 1fr);
+    gap: 16px;
+  }
+  .love-poster .media-split { grid-template-columns: .92fr 1.08fr; gap: 12px; }
+
+  .warm-story .support-poster {
+    width: 820px;
+    max-width: none;
+    grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .warm-stats .stat,
   .warm-stats .stat::before { transition: none; }

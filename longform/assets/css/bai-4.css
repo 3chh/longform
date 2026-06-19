@@ -743,6 +743,34 @@ body.emag4 {
   }
 }
 
+/* Mobile ≤640px: khoá các khối thị giác (stat/video/craft) theo bố cục desktop,
+   scale CẢ CỤM bằng artboard.js. Đặt sau cùng để đè rule reflow ở @media 920/640. */
+@media (max-width: 640px) {
+  .stat-poster {
+    width: 900px;
+    max-width: none;
+    margin: 12px auto 56px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 0;
+  }
+  .stat-poster div { min-height: 180px; }
+  .video-poster {
+    width: 880px;
+    max-width: none;
+    margin: 60px auto;
+    grid-template-columns: .72fr 1.28fr;
+  }
+  .video-poster video { min-height: 420px; }
+  .craft-poster {
+    width: 880px;
+    max-width: none;
+    margin: 60px auto;
+    grid-template-columns: 1fr 420px;
+    padding: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-block {
     opacity: 1;

@@ -18,7 +18,8 @@
       el.style.zoom = '';
       var gutterAttr = el.getAttribute('data-artboard-gutter');
       var gutter = gutterAttr === null ? 16 : parseInt(gutterAttr, 10) || 0;
-      var avail = document.documentElement.clientWidth - gutter;
+      var parentW = el.parentElement ? el.parentElement.clientWidth : document.documentElement.clientWidth;
+      var avail = Math.min(parentW, document.documentElement.clientWidth) - gutter;
       var w = el.offsetWidth; // bề rộng thiết kế (zoom đã reset)
       if (w > avail) el.style.zoom = (avail / w).toFixed(4);
     }
