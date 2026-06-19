@@ -33,7 +33,9 @@ body.theme-amber {
 /* ── HERO ── */
 .homewarm-hero {
   position: relative;
-  min-height: 100svh;
+  /* Rút bớt chiều cao bìa để dải 3 ô số liệu lọt vào màn hình đầu
+     (mỗi ô ~168px, đè lên hero -28px → cần ~140px phía dưới). */
+  min-height: calc(100svh - 165px);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -61,7 +63,7 @@ body.theme-amber {
   z-index: 2;
   width: min(1180px, calc(100vw - 48px));
   margin: 0 auto;
-  padding: 112px 0 78px;
+  padding: 72px 0 56px;
 }
 .homewarm-copy .kicker {
   display: inline-block;
@@ -145,11 +147,11 @@ body.theme-amber {
 .warm-stats {
   position: relative;
   z-index: 6;
-  width: min(1120px, calc(100vw - 48px));
-  margin: -62px auto 0;
+  width: 1120px;
+  margin: -28px auto 0;
   padding: 0;
   display: grid;
-  grid-template-columns: 1.15fr .92fr 1.1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   box-shadow: 0 26px 70px rgba(75,38,16,.18);
 }
@@ -181,7 +183,7 @@ body.theme-amber {
 .warm-stats .stat b {
   color: var(--accent-red);
   font-family: var(--display);
-  font-size: clamp(28px, 3.7vw, 50px);
+  font-size: 46px;
   line-height: 1;
   letter-spacing: -.02em;
   font-weight: 900;
@@ -220,15 +222,15 @@ body.theme-amber {
 
 /* ── LOVE POSTER: panel đỏ + bộ 3 ảnh khít chiều cao ── */
 .love-poster {
-  width: min(1240px, calc(100vw - 48px));
+  width: 1240px;
   margin: clamp(66px, 10vw, 132px) auto;
   display: grid;
-  grid-template-columns: minmax(200px, 280px) minmax(0, 1fr);
+  grid-template-columns: minmax(200px, 290px) minmax(0, 1fr);
   gap: 16px;
   align-items: stretch;
 }
 .poster-copy {
-  padding: clamp(30px, 4vw, 52px) clamp(24px, 3vw, 40px);
+  padding: 46px 30px;
   background:
     radial-gradient(circle at 82% 14%, rgba(243,201,107,.3), transparent 34%),
     var(--accent-red);
@@ -258,7 +260,7 @@ body.theme-amber {
 .poster-copy h2 {
   margin-top: 22px;
   font-family: var(--display);
-  font-size: clamp(30px, 4vw, 52px);
+  font-size: 40px;
   line-height: 1.1;
   letter-spacing: -.01em;
   font-weight: 800;
@@ -268,7 +270,7 @@ body.theme-amber {
   font-style: italic;
 }
 .poster-copy .pc-home {
-  width: clamp(46px, 5vw, 62px);
+  width: 56px;
   margin-bottom: 22px;
   color: var(--accent-gold);
 }
@@ -320,9 +322,9 @@ body.theme-amber {
   text-align: left;
 }
 /* posters dùng ảnh dọc → khung dọc, hẹp hơn, chữ đè */
-.child-story-poster,
-.warm-leader-poster {
-  width: min(720px, calc(100vw - 48px));
+.warm-story .child-story-poster,
+.warm-story .warm-leader-poster {
+  width: 1080px;
 }
 .child-story-poster .poster-frame,
 .warm-leader-poster .poster-frame { position: relative; }
@@ -339,29 +341,30 @@ body.theme-amber {
 }
 .image-words {
   position: absolute;
-  left: clamp(20px, 4vw, 44px);
-  top: clamp(22px, 4vw, 46px);
+  left: 46px;
+  top: 46px;
   right: auto;
   bottom: auto;
-  max-width: min(62%, 440px);
+  max-width: none;
   z-index: 2;
   color: #fffaf0;
   font-family: var(--display);
-  font-size: clamp(30px, 4.6vw, 56px);
+  font-size: 46px;
   font-weight: 800;
   font-style: italic;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -.01em;
   text-shadow: 0 8px 30px rgba(0,0,0,.55);
 }
 .warm-leader-poster .image-words {
-  top: clamp(22px, 4vw, 46px);
+  top: 46px;
   bottom: auto;
-  max-width: min(64%, 420px);
+  max-width: none;
 }
 
 /* ── SUPPORT POSTER: con số lớn + ảnh ngang ── */
-.support-poster {
+.warm-story .support-poster {
+  width: 1080px;
   display: grid;
   grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
   gap: 16px;
@@ -372,8 +375,8 @@ body.theme-amber {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: clamp(16px, 2.4vw, 28px);
-  padding: clamp(24px, 3vw, 42px);
+  gap: 22px;
+  padding: 36px;
   color: #fffaf0;
   background: var(--accent-red);
 }
@@ -382,13 +385,13 @@ body.theme-amber {
   flex: none;
   font-family: var(--display);
   font-weight: 900;
-  font-size: clamp(30px, 4.5vw, 54px);
+  font-size: 48px;
   line-height: 1;
   color: var(--accent-gold);
   white-space: nowrap;
 }
 .support-poster .pn-row span {
-  font-size: clamp(13px, 1.4vw, 15px);
+  font-size: 14px;
   font-weight: 800;
   line-height: 1.2;
   letter-spacing: .06em;
@@ -449,7 +452,11 @@ body.theme-amber {
 .story-nav { background: var(--paper); }
 .story-nav a { color: var(--accent-red); }
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE ──
+   Các khối thị giác (warm-stats · love-poster · support-poster · 2 poster chữ-đè-ảnh)
+   đã được khoá ở BỀ RỘNG THIẾT KẾ cố định + nội dung tính bằng px cố định, rồi
+   artboard.js thu/phóng CẢ CỤM theo bề ngang màn hình. Nhờ vậy chúng không reflow,
+   không nhảy dòng, không đổi tỉ lệ giữa các cỡ màn — KHÔNG override bố cục ở đây. */
 @media (max-width: 860px) {
   .homewarm-copy {
     width: calc(100vw - 36px);
@@ -457,107 +464,6 @@ body.theme-amber {
   }
   .homewarm-copy h1 .t-figure { font-size: clamp(38px, 11.4vw, 54px); }
   .homewarm-copy h1 .t-tail { font-size: clamp(26px, 7vw, 48px); }
-  .warm-stats {
-    grid-template-columns: 1fr;
-  }
-  .love-poster,
-  .support-poster {
-    width: calc(100vw - 36px);
-    max-width: 760px;
-    gap: 8px;
-  }
-  .love-poster {
-    grid-template-columns: minmax(116px, .42fr) minmax(0, .58fr);
-  }
-  .love-poster .media-split {
-    grid-template-columns: .9fr 1.1fr;
-    gap: 6px;
-  }
-  .poster-copy {
-    padding: 16px 14px;
-  }
-  .poster-copy span {
-    font-size: 11px;
-    line-height: 1.3;
-    letter-spacing: .12em;
-  }
-  .poster-copy h2 {
-    margin-top: 36px;
-    font-size: clamp(21px, 7.4vw, 30px);
-    line-height: 1.02;
-  }
-  .support-poster {
-    grid-template-columns: minmax(112px, .36fr) minmax(0, .64fr);
-  }
-  .support-poster .poster-number {
-    padding: 14px 12px;
-    gap: 12px;
-  }
-  .support-poster .pn-row {
-    gap: 8px;
-  }
-  .support-poster .pn-row b {
-    font-size: clamp(20px, 5.6vw, 26px);
-  }
-  .support-poster .pn-row span {
-    font-size: 11px;
-    letter-spacing: .04em;
-  }
-  .support-poster figcaption {
-    min-width: 0;
-  }
-  .child-story-poster,
-  .warm-leader-poster {
-    width: min(720px, calc(100vw - 36px));
-    max-width: 100%;
-  }
-  .warm-stats { margin-top: -34px; }
-  .warm-stats .stat {
-    min-height: auto;
-    border-right: 0;
-    border-bottom: 1px solid rgba(42,23,16,.14);
-  }
-  .warm-stats .stat:last-child { border-bottom: 0; }
-  .image-words { font-size: clamp(26px, 8vw, 44px); }
-  .warm-leader-poster .image-words {
-    bottom: 24px;
-    max-width: 78%;
-    font-size: clamp(24px, 6vw, 34px);
-  }
-}
-
-/* Mobile ≤640px: khoá các khối thị giác (warm-stats/love-poster/support-poster)
-   theo bố cục desktop, scale CẢ CỤM bằng artboard.js. Đặt sau cùng để đè reflow. */
-@media (max-width: 640px) {
-  .warm-stats {
-    width: 920px;
-    max-width: none;
-    margin: -62px auto 0;
-    grid-template-columns: 1.15fr .92fr 1.1fr;
-  }
-  .warm-stats .stat {
-    min-height: 168px;
-    border-right: 1px solid rgba(42,23,16,.14);
-    border-bottom: 0;
-    padding: 30px 22px;
-  }
-  .warm-stats .stat:last-child { border-right: 0; }
-
-  .love-poster {
-    width: 920px;
-    max-width: none;
-    margin: 80px auto;
-    grid-template-columns: minmax(260px, 400px) minmax(0, 1fr);
-    gap: 16px;
-  }
-  .love-poster .media-split { grid-template-columns: .92fr 1.08fr; gap: 12px; }
-
-  .warm-story .support-poster {
-    width: 820px;
-    max-width: none;
-    grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
-    gap: 16px;
-  }
 }
 
 /* Phone ≤560px: tắt justify thân bài để tránh giãn chữ trên màn hẹp. */
@@ -615,12 +521,63 @@ body.theme-amber {
   border-radius: 2px;
 }
 
-/* MOBILE — quote & chữ đè ảnh: cỡ chữ theo vw để khung và chữ cùng co,
-   các dòng ngắt sẵn không wrap lại lung tung giữa các máy. */
+/* Hero dek: dàn rộng thành 2 dòng → khối phụ thấp hơn, title tụt xuống,
+   chữ trải ngang đỡ dồn trái */
+.homewarm-copy .dek { max-width: 760px; }
+
+/* Khung đỏ — phóng to tương phản "bàn tay nhỏ" ↔ "mái nhà LỚN" */
+.poster-copy h2 { line-height: 1.04; }
+.poster-copy h2 .nw { white-space: nowrap; }
+.poster-copy h2 .sm {
+  font-size: .5em;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: .02em;
+  vertical-align: .1em;
+  color: rgba(255,250,240,.74);
+}
+.poster-copy h2 .mid {
+  font-size: .62em;
+  font-weight: 500;
+  letter-spacing: .01em;
+  color: rgba(255,250,240,.9);
+}
+.poster-copy h2 .big { margin-top: .04em; }
+.poster-copy h2 .big em {
+  display: inline-block;
+  font-size: 1.5em;
+  line-height: .94;
+}
+/* "mái nhà" nhỏ lại để "lớn" bật lên (cả cụm vẫn trên 1 dòng) */
+.poster-copy h2 .big em .mn {
+  font-size: .6em;
+  font-weight: 700;
+}
+
+/* Chữ đè ảnh (poster dọc): khoá đúng 2 dòng đã thiết kế, không wrap lại */
+.child-story-poster .image-words .line,
+.warm-leader-poster .image-words .line { white-space: nowrap; }
+
+/* Pull-quote: nhãn vàng nhỏ "Mái ấm gia đình Việt" dưới icon mái nhà */
+.warm-story .pullquote .roof { margin-bottom: clamp(12px, 1.8vw, 18px); }
+.warm-story .pullquote .quote-brand {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 0 auto clamp(20px, 3vw, 30px);
+  text-align: center;
+  color: var(--accent-gold);
+  font-size: clamp(12px, 1.4vw, 14px);
+  font-weight: 900;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+/* MOBILE — pull-quote là dải tràn viền (không artboard) nên dùng vw để khung và
+   chữ cùng co, các dòng ngắt sẵn không wrap lại lung tung giữa các máy. */
 @media (max-width: 640px) {
   .warm-story .pullquote { padding: 13vw 7vw; }
   .warm-story .pullquote p { font-size: 4.4vw; line-height: 1.42; }
-  .warm-story .pullquote .roof { width: 13vw; margin-bottom: 5vw; }
-  .image-words { font-size: 5.6vw; }
-  .warm-leader-poster .image-words { font-size: 5.2vw; }
+  .warm-story .pullquote .roof { width: 13vw; margin-bottom: 3.2vw; }
+  .warm-story .pullquote .quote-brand { font-size: 3vw; margin-bottom: 4.6vw; }
 }
