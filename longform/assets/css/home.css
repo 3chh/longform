@@ -9,6 +9,8 @@
   --text:       #2a2f35;
   --muted:      #6b7480;
   --line:       #e6e9ec;
+  /* --bg:         transparent;
+  --band:       rgba(244,246,247,.82); */
   --bg:         #ffffff;
   --band:       #f4f6f7;
   --wide:       1200px;
@@ -20,7 +22,9 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
   font-family: var(--font);
   color: var(--text);
-  background: var(--bg);
+  /* background:
+    url("../img/bg-home.png") center top / cover no-repeat fixed,
+    #fdf9f4; */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -32,8 +36,8 @@ a { color: inherit; text-decoration: none; }
 /* ── HEADER ── */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,.92);
-  backdrop-filter: saturate(160%) blur(8px);
+  background: rgba(253,249,244,.88);
+  backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--line);
 }
 .site-header .wrap {
@@ -167,7 +171,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ── FOOTER ── */
 .site-footer {
-  border-top: 1px solid var(--line); background: var(--band);
+  border-top: 1px solid var(--line); background: rgba(244,240,232,.72);
   padding: 40px 0; color: var(--muted); font-size: 14px;
 }
 .site-footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; }
