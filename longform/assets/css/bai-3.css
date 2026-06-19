@@ -930,7 +930,8 @@ body.heritage-story::before { display: none; }
   .memory-opening p:not(.lead),
   .heritage-copy p,
   .research-panel p {
-    text-align: left;
+    text-align: justify;
+    text-justify: inter-word;
   }
 }
 

@@ -94,6 +94,8 @@ body.theme-amber {
   text-shadow: 0 22px 70px rgba(0,0,0,.42);
 }
 .homewarm-copy h1 span { display: block; }
+/* "Gần" và ".nowrap 6,2 tỷ đồng" phải nằm cùng dòng trong .t-figure */
+.homewarm-copy h1 .t-figure span { display: inline; }
 .homewarm-copy h1 .t-lead {
   font-weight: 600;
   font-size: clamp(26px, 3.6vw, 52px);
@@ -116,14 +118,40 @@ body.theme-amber {
   color: rgba(255,250,240,.92);
   vertical-align: .18em;
 }
+/* "tỷ đồng": nhỏ hơn, cùng font/weight với "Gần", màu trắng */
+.homewarm-copy h1 .t-figure .t-unit {
+  display: inline;
+  font-size: .38em;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: .01em;
+  color: rgba(255,250,240,.92);
+}
 .homewarm-copy h1 .t-tail {
-  margin-top: .14em;
-  font-style: italic;
+  margin-top: .24em;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-style: normal;
   font-weight: 500;
-  font-size: clamp(26px, 4.2vw, 62px);
-  line-height: 1.06;
-  color: #fffaf0;
+  font-size: clamp(18px, 2.2vw, 26px);
+  line-height: 1.28;
+  color: rgba(255,250,240,.82);
+  white-space: normal;
+  max-width: 24ch;
+  letter-spacing: .01em;
+}
+/* Tên chương trình: to hơn + cách điệu (vàng, nghiêng) để bật lên */
+.homewarm-copy h1 .t-prog {
+  margin-top: .08em;
+  margin-left: .50em;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(28px, 5.2vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -.005em;
+  color: var(--accent-gold);
   white-space: nowrap;
+  text-shadow: 0 12px 38px rgba(0,0,0,.42);
 }
 .homewarm-copy .dek {
   max-width: 650px;
@@ -301,6 +329,8 @@ body.theme-amber {
   padding: 12px 0 0;
   color: var(--muted);
   font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
   text-align: left;
 }
 
@@ -321,9 +351,10 @@ body.theme-amber {
   margin: 14px 0 0;
   color: var(--text);
   font-style: italic;
-  font-size: 14.5px;
-  line-height: 1.55;
+  font-size: 16px;
+  line-height: 1.6;
   text-align: left;
+  white-space: nowrap;
 }
 /* posters dùng ảnh dọc → khung dọc, hẹp hơn, chữ đè */
 .warm-story .child-story-poster,
@@ -467,15 +498,8 @@ body.theme-amber {
     padding-bottom: 54px;
   }
   .homewarm-copy h1 .t-figure { font-size: clamp(38px, 11.4vw, 54px); }
-  .homewarm-copy h1 .t-tail { font-size: clamp(26px, 7vw, 48px); }
-}
-
-/* Phone ≤560px: tắt justify thân bài để tránh giãn chữ trên màn hẹp. */
-@media (max-width: 560px) {
-  .warm-story .prose,
-  .warm-story .prose p {
-    text-align: left;
-  }
+  .homewarm-copy h1 .t-tail { font-size: clamp(17px, 4.2vw, 24px); }
+  .homewarm-copy h1 .t-prog { font-size: clamp(24px, 6.2vw, 44px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -503,7 +527,7 @@ body.theme-amber {
 .warm-story .pullquote .roof svg { display: block; width: 100%; height: auto; }
 
 /* nới line-height cho đuôi tiêu đề hero */
-.homewarm-copy h1 .t-tail { line-height: 1.12; }
+.homewarm-copy h1 .t-tail { line-height: 1.22; }
 
 /* Dải số liệu: số to, đơn vị nhỏ + nghiêng để con số bật lên */
 .warm-stats .stat b .unit {
@@ -513,17 +537,8 @@ body.theme-amber {
   letter-spacing: .01em;
 }
 
-/* Hero: vạch vàng làm điểm nhấn trước tiêu đề */
-.homewarm-copy h1 { margin-top: 20px; }
-.homewarm-copy h1::before {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 4px;
-  margin-bottom: 24px;
-  background: var(--accent-gold);
-  border-radius: 2px;
-}
+/* Hero: tiêu đề ngay dưới kicker (đã bỏ rubric + vạch vàng) */
+.homewarm-copy h1 { margin-top: 30px; }
 
 /* Hero dek: dàn rộng thành 2 dòng → khối phụ thấp hơn, title tụt xuống,
    chữ trải ngang đỡ dồn trái */

@@ -185,7 +185,7 @@ body.theme-red {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 22%;
 }
 .muong-portrait figcaption {
   margin-top: 10px;
@@ -194,6 +194,7 @@ body.theme-red {
   line-height: 1.5;
   font-style: italic;
 }
+.muong-portrait figcaption .line { display: block; }
 
 .muong-emag {
   max-width: none;
@@ -256,7 +257,11 @@ body.theme-red {
 }
 
 .muong-emag .prose {
-  max-width: 780px;
+  /* 780px cột chữ + 2×24px lề ngang (container .muong-emag padding:0) → chữ
+     không dính 2 mép trên mobile; desktop cột chữ vẫn ~780px. */
+  max-width: 828px;
+  padding-left: 24px;
+  padding-right: 24px;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -494,15 +499,8 @@ body.theme-red {
   align-items: start;
   padding: clamp(34px, 5vw, 56px) 0;
   border-top: 1px solid var(--line);
-  border-radius: 28px;
-  transition: background .3s ease, box-shadow .3s ease, transform .3s ease;
 }
 .qa-turn:first-child { border-top: 0; }
-.qa-turn:hover {
-  background: rgba(251,255,244,.62);
-  box-shadow: 0 22px 70px rgba(8,35,29,.08);
-  transform: translateY(-2px);
-}
 .qa-q { align-self: start; }
 .muong-emag .who { text-transform: none; }
 .muong-emag .who b { font-weight: 900; letter-spacing: .02em; }
@@ -523,11 +521,6 @@ body.theme-red {
   aspect-ratio: 4 / 5;
   object-fit: cover;
   display: block;
-  transition: transform .45s ease, filter .45s ease;
-}
-.qa-turn:hover .qa-aside img {
-  filter: saturate(1.08) contrast(1.04);
-  transform: scale(1.025);
 }
 /* Screenshot trang MXH: giữ trọn header (avatar + tên + lượt theo dõi) ở trên */
 .qa-aside img[src*="profile"] {
@@ -785,6 +778,27 @@ body.theme-red {
   }
 }
 
+/* Mobile ≤640px: BÌA gọn trong 1 màn — dồn nội dung canh giữa, thu portrait,
+   siết padding/gap để title + chân dung không tràn xuống dưới fold (ảnh bị cắt). */
+@media (max-width: 640px) {
+  .muong-hero-grid {
+    padding: 76px 0 40px;
+    gap: 18px;
+    align-content: center;
+  }
+  .muong-title h1 { font-size: clamp(36px, 10.5vw, 56px); }
+  .muong-title h1 span.t-top { font-size: clamp(28px, 8.2vw, 38px); }
+  .muong-title h1 span.t-sub { font-size: clamp(25px, 7.4vw, 31px); }
+  .muong-title .hero-rubric { margin-top: 14px; }
+  .muong-title .dek { margin-top: 12px; font-size: 15px; line-height: 1.5; }
+  .muong-title .meta { margin-top: 14px; }
+  .muong-portrait {
+    max-width: 200px;
+    margin: 0;
+  }
+  .muong-portrait figcaption { font-size: 11px; }
+}
+
 /* Mobile: cho dek/toc mô tả chảy mềm để tránh chữ mồ côi (giữ ngắt dòng desktop) */
 @media (max-width: 560px) {
   .muong-title .dek .line,
@@ -800,11 +814,12 @@ body.theme-red {
   .muong-emag .media-2 {
     grid-template-columns: 1fr;
   }
-  /* tắt justify thân bài trên màn hẹp */
+  /* giữ căn đều 2 bên (justify) cho thân bài trên mobile */
   .muong-emag .prose,
   .muong-emag .prose p,
   .qa-a .a {
-    text-align: left;
+    text-align: justify;
+    text-justify: inter-word;
   }
 }
 

@@ -343,7 +343,8 @@ figcaption b { font-style: normal; font-weight: 600; color: var(--text); }
   .hero .kicker { margin-bottom: 14px; }
   .hero .dek { margin-top: 16px; font-size: 15px; }
   .hero .scrollcue { margin-top: 20px; }
-  .prose { text-align: left; }
+  /* Giữ căn đều 2 bên (justify) cho thân bài cả trên mobile — không tắt nữa.
+     .lead/.intro-note vẫn căn trái theo quy tắc riêng ở trên. */
   .media,
   .media-2,
   .media-3,
