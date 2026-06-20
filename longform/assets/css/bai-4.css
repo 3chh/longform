@@ -353,6 +353,11 @@ body.emag4 {
   text-shadow: 0 1px 8px rgba(0,0,0,.55);
 }
 
+.poster-field .poster-caption p,
+.poster-community .poster-caption p {
+  max-width: 920px;
+}
+
 .poster-caption.light {
   color: #fff;
 }
