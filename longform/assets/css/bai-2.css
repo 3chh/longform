@@ -16,7 +16,8 @@ body.theme-red {
     radial-gradient(120% 78% at 100% 0%, rgba(240,201,75,.18), transparent 46%),
     radial-gradient(85% 65% at 0% 2%, rgba(23,184,137,.16), transparent 42%),
     var(--bg);
-  background-attachment: fixed;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 #progress { background: var(--accent); }

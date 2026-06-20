@@ -19,7 +19,8 @@ body.theme-amber {
     radial-gradient(120% 80% at 100% 0%, rgba(243,201,107,.24), transparent 46%),
     radial-gradient(92% 70% at 0% 3%, rgba(216,116,37,.14), transparent 44%),
     var(--bg);
-  background-attachment: fixed;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 #progress { background: var(--accent-red); }

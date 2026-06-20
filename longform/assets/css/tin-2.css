@@ -35,7 +35,7 @@ body.theme-navy {
   height: calc(100% - 54px);
   filter: sepia(.18) saturate(.82) contrast(1.06);
   transform: none;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center top;
   background: #17120f;
 }
