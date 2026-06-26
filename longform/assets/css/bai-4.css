@@ -901,7 +901,18 @@ body.emag4 {
   }
 
   .quote-poster blockquote {
+    font-size: clamp(24px, 7vw, 31px);
+    line-height: 1.28;
     text-align: left;
+    text-wrap: pretty;
+  }
+
+  .quote-poster {
+    padding-inline: 18px;
+  }
+
+  .quote-inner {
+    padding-left: 24px;
   }
 
   /* Mobile hẹp: bỏ ngắt dòng cứng của trích dẫn, cho chữ tự xuống dòng */
